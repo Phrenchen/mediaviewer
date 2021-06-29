@@ -32,6 +32,10 @@
   /* pointer-events: none; */
 }
 
+.audio-container {
+  background-color: var(--selected-bg-color);
+}
+
 .navi-buttons {
   position: absolute;
 

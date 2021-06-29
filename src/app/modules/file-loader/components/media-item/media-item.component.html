@@ -55,7 +55,7 @@
           Logo
         </object>
       </div>
-      <div *ngSwitchCase="'audio'">
+      <div *ngSwitchCase="'audio'" class="audio-container">
         <audio controls>
           <source [src]="item.url" type="audio/mpeg">
           Your Browser does not support Audio.

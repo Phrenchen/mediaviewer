@@ -1,9 +1,10 @@
 .button {
   padding: 0.7rem 0;
 
-  width: 100%;
-  max-width: 50px;
+  /* width: 100%;
+  max-width: 50px; */
 
+  padding: .5rem 1rem;
   opacity: .85;
   z-index: 2;
 
@@ -19,8 +20,8 @@
 
   gap: 1rem;
 
-  color: #333;
-  background-color: #ccc;
+  color: var(--selected-txt-color);
+  background-color: var(--selected-bg-color);
 }
 
 p {

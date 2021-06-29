@@ -11,7 +11,7 @@ export class StaticDataService {
     this.initZelda();
     this.assetMap.set(AssetSetEnum.SINGLE_GIF, ['assets/images/a-cat.gif'])
     this.assetMap.set(AssetSetEnum.SINGLE_SVG, ['assets/images/svg/fahrauftraege-type-deliver.svg'])
-    this.assetMap.set(AssetSetEnum.MP3, ['assets/audio/15 B-Boy Bouilabaisse.mp3']);
+    this.assetMap.set(AssetSetEnum.MP3, ['assets/audio/15 B-Boy Bouilabaisse.mp3', 'assets/audio/15 B-Boy Bouilabaisse2.mp3']);
   }
 
   public get(assetSetName: AssetSetEnum): any[] {

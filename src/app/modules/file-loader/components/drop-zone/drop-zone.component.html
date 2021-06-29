@@ -16,7 +16,7 @@
       <p>oder</p>
     </div>
 
-    <label class="file-upload">
+    <!-- <label class="file-upload">
       <input
         type="file"
         #fileDropRef
@@ -25,11 +25,11 @@
         (change)="fileBrowserHandler($event)"
       />
       <b>Dateien suchen</b>
-    </label>
+    </label> -->
 
     <div *ngIf="!hasFiles">
       <p>Zeigt Bilder, GIFs und Videos an</p>
-      <p>Unterstützt: JPG, PNG, WebP, GIF, mp4, ogg</p>
+      <p>Unterstützt: JPG, PNG, WebP, GIF, mp4, MOV, OGG</p>
     </div>
   </div>
 

@@ -1,8 +1,20 @@
 <div class="outer-container">
   <header>
-    <app-top-comment *ngIf="showUI">
+    <label class="file-upload" *ngIf="showUI">
+      <input
+        type="file"
+        #fileDropRef
+        id="fileDropRef"
+        multiple
+        (change)="fileBrowserHandler($event)"
+      />
+      <!-- <b>Dateien suchen</b> -->
+      <b></b>
+    </label>
+    <!-- <app-top-comment *ngIf="showUI">
       <app-start></app-start>
-    </app-top-comment>
+    </app-top-comment> -->
+    <app-grid-configurator></app-grid-configurator>
     <app-theme-switch *ngIf="showUI"></app-theme-switch>
     <app-toggle-anything
       [initialState]="true"
