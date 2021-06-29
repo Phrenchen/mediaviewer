@@ -1,0 +1,60 @@
+.outer-container {
+  /* border: 3px dashed deeppink; */
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: max(100%, 100vh);
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.content {
+  /* border: 3px dashed blue; */
+
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.files {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 3rem;
+  /* justify-content: center; */
+}
+
+/*
+
+@media only screen and (min-width: 800px) {
+
+}
+
+*/
+.button {
+  padding: 0.7rem 0;
+
+  width: 100%;
+
+  z-index: 2;
+
+  cursor: pointer;
+
+  transition: all .3s ease-out;
+}
+
+.button:hover, .button:focus {
+}
+

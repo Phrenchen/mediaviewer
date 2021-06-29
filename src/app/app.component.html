@@ -1,0 +1,21 @@
+<div class="outer-container">
+  <header>
+    <app-top-comment *ngIf="showUI">
+      <app-start></app-start>
+    </app-top-comment>
+    <app-theme-switch *ngIf="showUI"></app-theme-switch>
+    <app-toggle-anything
+      [initialState]="true"
+      [enabledLabel]="'Hide UI'"
+      [disabledLabel]="'Show UI'"
+      (toggled)="showUI = $event"
+    ></app-toggle-anything>
+  </header>
+  <div class="content">
+    <app-drop-zone *ngIf="showUI"></app-drop-zone>
+    <div class="files">
+      <app-user-file-list *ngIf="showUI && (fileService.files$ | async).length > 0"></app-user-file-list>
+      <app-file-list></app-file-list>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div
+  class="dropzone"
+  appDnd
+  (filesDropped)="onFilesDropped($event)"
+  [ngClass]="{
+    'fade-dropzone': hasFiles,
+    'full-screen': !hasFiles
+  }"
+>
+  <div>
+    <h1>MVP</h1>
+  </div>
+  <div>
+    <div *ngIf="!hasFiles">
+      <h3>Dateien hier fallen lassen</h3>
+      <p>oder</p>
+    </div>
+
+    <label class="file-upload">
+      <input
+        type="file"
+        #fileDropRef
+        id="fileDropRef"
+        multiple
+        (change)="fileBrowserHandler($event)"
+      />
+      <b>Dateien suchen</b>
+    </label>
+
+    <div *ngIf="!hasFiles">
+      <p>Zeigt Bilder, GIFs und Videos an</p>
+      <p>Unterstützt: JPG, PNG, WebP, GIF, mp4, ogg</p>
+    </div>
+  </div>
+
+  <div class="list-header">
+    <p *ngIf="hasFiles">
+      {{ (fileService.files$ | async).length }} Dateien geöffnet.
+    </p>
+    <button mat-raised-button *ngIf="hasFiles" (click)="resetFiles()">
+      Liste löschen
+    </button>
+  </div>
+  <button *ngIf="!hasFiles" (click)="showExamples(0)">Zelda</button>
+  <button *ngIf="!hasFiles" (click)="showExamples(1)">Beispiel GIF</button>
+  <button *ngIf="!hasFiles" (click)="showExamples(2)">Beispiel SVG</button>
+  <button *ngIf="!hasFiles" (click)="showExamples(3)">Beispiel MP3</button>
+</div>

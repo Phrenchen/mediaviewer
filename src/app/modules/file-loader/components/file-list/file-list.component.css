@@ -1,0 +1,44 @@
+
+.wrapper {
+}
+
+.items {
+  /* display: grid;
+  grid-template-columns: 1fr;
+  justify-self: center;
+  gap: 1rem;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 1rem; */
+}
+
+/* added, if user manually changes amount of columns */
+.custom-image-container {
+  grid-template-columns: repeat(var(--col-count), 1fr);
+
+}
+
+/* 1 file centered */
+.single-item-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* multiple files */
+.multiple-item-list {
+  /* grid-template-columns: repeat(auto-fill, var(--preferred-item-width)); */
+  grid-template-columns: repeat(var(--col-count), 1fr);
+  /* justify-items: stretch; */
+}
+
+.item-container {
+  justify-self: center;
+}
+
+.is-selected {
+  border: 3px solid black;
+  border-radius: .3rem;
+}
