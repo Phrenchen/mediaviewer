@@ -8,6 +8,7 @@ import { FileLoaderModule } from './modules/file-loader/file-loader.module';
 import { ThemeSwitchModule } from './modules/theme-switch/theme-switch.module';
 import { ToggleAnythingModule } from './modules/toggle-anything/toggle-anything.module';
 import { UserFileListModule } from './modules/user-file-list/user-file-list.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UserFileListModule } from './modules/user-file-list/user-file-list.modu
     ThemeSwitchModule,
     FileLoaderModule,
     UserFileListModule,
-    ToggleAnythingModule
+    ToggleAnythingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

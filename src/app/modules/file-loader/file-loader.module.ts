@@ -5,6 +5,7 @@ import { DndDirective } from 'src/app/modules/file-loader/directives/dnd.directi
 import { FileListComponent } from './components/file-list/file-list.component';
 import { MediaItemComponent } from './components/media-item/media-item.component';
 import { GridConfiguratorComponent } from './components/grid-configurator/grid-configurator.component';
+import { ImageEditorModule } from '../image-editor/image-editor.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { GridConfiguratorComponent } from './components/grid-configurator/grid-c
     MediaItemComponent,
     GridConfiguratorComponent,
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    ImageEditorModule],
   exports: [
     DropZoneComponent,
     DndDirective,
