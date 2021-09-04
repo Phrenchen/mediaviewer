@@ -26,7 +26,8 @@
   <div class="content">
     <app-drop-zone *ngIf="showUI"></app-drop-zone>
     <div class="files">
-      <app-user-file-list *ngIf="showUI && (fileService.files$ | async).length > 0"></app-user-file-list>
+      <!-- todo: add toggle: icon button? -->
+      <!-- <app-user-file-list *ngIf="showUI && (fileService.files$ | async).length > 0"></app-user-file-list> -->
       <app-file-list></app-file-list>
     </div>
   </div>
