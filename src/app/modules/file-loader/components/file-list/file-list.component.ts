@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   Component,
   Input,
   OnInit,
@@ -13,8 +14,8 @@ import { MediaService } from '../../services/media.service';
   templateUrl: './file-list.component.html',
   styleUrls: ['./file-list.component.css'],
 })
-export class FileListComponent implements OnInit {
-  @Input() autoSelectFirst: boolean = false;
+export class FileListComponent implements OnInit, AfterViewInit {
+  @Input() autoSelectFirst: boolean = true;
 
   public imagesAvailable: boolean = false;
 
@@ -30,13 +31,25 @@ export class FileListComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {}
 
+
   ngOnInit(): void {
     this.fileService.files$.subscribe(files => {
       console.log('received new files:', files.length);
       this.mediaFiles = files;
       // this.mediaFiles = [];
       // this.initFiles(this.files);
+
     })
+  }
+
+  ngAfterViewInit(): void {
+    if(this.autoSelectFirst) {
+      // delay optional initial click on first item by 1 frame to avoid:
+      // Error: NG0100: ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked. Previous value: 'false'. Current value: 'true'
+      setTimeout(() => {
+        this.itemClicked(0);
+     }, 0);
+    }
   }
 
   // ngOnChanges(changes: SimpleChanges): void {
@@ -70,8 +83,8 @@ export class FileListComponent implements OnInit {
   public itemClicked(mediaIndex: number): void {
     // console.log('itm clickd', this.selectedFile, media);
     // this.selectedFile = media === this.selectedFile ? null : media;
-    this.selectedFileIndex =
-      this.selectedFileIndex !== mediaIndex ? mediaIndex : -1;
+    this.selectedFileIndex = this.selectedFileIndex !== mediaIndex ? mediaIndex : -1;
+    // this.selectedFileIndex = mediaIndex;
   }
 
   public sanitize(stuff: any): any {

@@ -5,33 +5,7 @@
     class="media-item"
     [ngClass]="{ 'selected-item': selected }"
   >
-    <!-- cursor buttons (left | right -> prev | next) -->
-    <div *ngIf="selected && showNaviButtons" class="navi-buttons buttons-top">
-      <div>
-        <button (click)="previous($event)">Prev</button>
-        <button (click)="next($event)">Next</button>
-      </div>
-      <div>
-        <div>
-          <input
-            id="item_{{ itemId }}"
-            type="range"
-            min="1"
-            max="10"
-            [value]="itemSwitchDelay"
-            step="1"
-            (change)="switchDelayChange($event)"
-          />
-          <label for="item_{{ itemId }}">{{ itemSwitchDelay }} Sekunden</label>
-          <button (click)="togglePlayPause()">
-            <ng-container *ngIf="isPlaying; else elseTemplate">
-              Pause
-            </ng-container>
-            <ng-template #elseTemplate> Play </ng-template>
-          </button>
-        </div>
-      </div>
-    </div>
+
 
     <div (click)="onItemClicked()">
       <div *ngSwitchCase="'image'">

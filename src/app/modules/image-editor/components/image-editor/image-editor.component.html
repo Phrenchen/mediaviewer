@@ -1,8 +1,77 @@
-<div>
+<div class="image-editor-container">
   <h3>Image Editor</h3>
-  <div>
-    Select Filter
-    <div class="filters">
-  </div>
-  </div>
+
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Border Sizes </mat-panel-title>
+        <mat-panel-description>
+          Select width or height for top, right, bottom and left
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="borderForm">
+        <div formArrayName="size">
+          <div class="border-header">
+            <h2>Borders</h2>
+
+            <mat-selection-list #axis [multiple]="false" class="axis-selection">
+              <mat-list-option *ngFor="let axis of ['all', 'horizontal', 'vertical']; let i = index" [value]="axis">
+                <!-- {{axis}}  -->
+                <span *ngIf="i === 0; else axisIcon;">all</span>
+                <ng-template #axisIcon>
+                  <!-- rotate icon for vertical selection -->
+                <mat-icon [ngClass]="{'rotate-icon': i === 2}">compare_arrows</mat-icon>
+              </ng-template>
+              </mat-list-option>
+            </mat-selection-list>
+
+
+            <button (click)="resetBorders($event)"><mat-icon>border_clear</mat-icon></button>
+            </div>
+          <!-- <button (click)="addAlias()">+ Add another alias</button> -->
+
+          <div class="border-inputs" *ngFor="let border of borders.controls; let i = index" >
+            <!-- The repeated alias template -->
+            <label for="border-{{ i }}">{{getLabel('borders', i)}}</label>
+            <mat-slider matInput [formControlName]="i" id="border-{{ i }}" ></mat-slider>
+            {{border.value}}
+
+          </div>
+        </div>
+      </form>
+      {{borderForm.value.size | json}}
+    </mat-expansion-panel>
+    <mat-expansion-panel disabled>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Border Colors </mat-panel-title>
+        <mat-panel-description>
+          Select color for top, right, bottom and left
+          <mat-icon>map</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Country</mat-label>
+        <input matInput />
+      </mat-form-field>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Overlay </mat-panel-title>
+        <mat-panel-description>
+          Select blend mode and color
+          <mat-icon>date_range</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+      </mat-form-field>
+      <mat-datepicker #picker></mat-datepicker> -->
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>

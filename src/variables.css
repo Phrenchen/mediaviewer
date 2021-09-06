@@ -1,14 +1,14 @@
 :root {
   /* filters */
-  --f-border-top-height: 0px;
+  --f-border-top-height: 5px;
   --f-border-right-width: 0px;
   --f-border-bottom-height: 0px;
   --f-border-left-width: 0px;
 
-  --f-border-top-color: '#ffffff';
-  --f-border-right-color: '#ffffff';
-  --f-border-bottom-color: '#ffffff';
-  --f-border-left-color: '#ffffff';
+  --f-border-top-color: 'green';
+  --f-border-right-color: 'green';
+  --f-border-bottom-color: 'green';
+  --f-border-left-color: 'green';
 
   --image-border-radius: .2rem,
 

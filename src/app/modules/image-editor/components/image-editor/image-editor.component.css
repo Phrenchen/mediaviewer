@@ -1,0 +1,43 @@
+.image-editor-container {
+  /* border: 3px dashed black; */
+  background-color: white;
+/*
+  position: absolute;
+  top: 0;
+  left: 0; */
+  width: 30vw;
+  max-width: 400px;
+
+  width: 100%;
+  min-height: 400px;
+}
+
+.border-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.axis-selection {
+  display: flex;
+  gap: 1rem;
+}
+
+.rotate-icon {
+  transform: rotate(90deg);
+}
+
+.border-inputs {
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  gap: 3rem;
+  justify-content: space-between;
+  justify-self: center;
+  align-items: center;
+}
+
+h2 {
+  margin: 0;
+}

@@ -1,5 +1,6 @@
 <div class="wrapper" [ngClass]="{ 'single-item-list': mediaFiles.length === 1 }">
-  <app-media-item
+  <!-- selected item -->
+  <!-- <app-media-item
     *ngIf="selectedFileIndex >= 0"
     [item]="mediaFiles[selectedFileIndex]"
     [selected]="true"
@@ -7,7 +8,16 @@
     (itemClicked)="itemClicked(selectedFileIndex)"
     (selectPrevious)="selectPrevious($event)"
     (selectNext)="selectNext($event)"
-  ></app-media-item>
+  ></app-media-item> -->
+  <app-selected-item
+  *ngIf="selectedFileIndex >= 0"
+    [item]="mediaFiles[selectedFileIndex]"
+    [selected]="true"
+    [showNaviButtons]="mediaFiles.length > 1"
+    (itemClicked)="itemClicked(selectedFileIndex)"
+    (selectPrevious)="selectPrevious($event)"
+    (selectNext)="selectNext($event)"
+  ></app-selected-item>
 
 
   <div class="items" [ngClass]="{ 'multiple-item-list': mediaFiles.length > 1 }">
@@ -18,7 +28,7 @@
     >
       <div [ngClass]="{'is-selected': i === selectedFileIndex}">
         <app-media-item [item]="media" [tabIndex]="i" ></app-media-item>
-        <app-image-editor></app-image-editor>
+
       </div>
     </div>
   </div>
