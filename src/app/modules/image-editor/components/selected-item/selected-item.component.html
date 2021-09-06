@@ -34,45 +34,47 @@
     [ngClass]="{ 'selected-item': selected }"
   >
 
-  <div *ngIf="selected && showEditor" class="editor-container">
-    <app-image-editor></app-image-editor>
-  </div>
-
-    <div (click)="onItemClicked()" class="media">
-      <div *ngSwitchCase="'image'">
-        <img
-          src="{{ item.fileReader ? item.fileReader.result : item.url }}"
-          alt="user image"
-          tabindex="{{ tabIndex }}"
-        />
-      </div>
-      <div *ngSwitchCase="'video'">
-        <video controls muted>
-          <source [src]="item.videoSrc" type="{{ item.type }}" />
-          Your Browser does not support Video Please switch to firefox or chrome
-          or safari or any modern browser
-        </video>
-      </div>
-      <div *ngSwitchCase="'svg'">
-        <p>TODO: *.svg: {{ item.url }}</p>
-
-        <object type="image/svg+xml" [data]="item.svgSrc" class="logo">
-          Logo
-        </object>
-      </div>
-      <div *ngSwitchCase="'audio'" class="audio-container">
-        <audio controls>
-          <source [src]="item.url" type="audio/mpeg" />
-          Your Browser does not support Audio. Please switch to firefox or
-          chrome or safari or any modern browser
-        </audio>
-      </div>
-      <div *ngSwitchDefault>
-        <img src="{{ item.url }}" alt="item.url" />
-      </div>
-
+  <div class="editor-and-media">
+    <div *ngIf="selected && showEditor" class="editor-container">
+      <app-image-editor></app-image-editor>
     </div>
-    <!-- selected item end -->
+
+      <div (click)="onItemClicked()" class="media">
+        <div *ngSwitchCase="'image'">
+          <img
+            src="{{ item.fileReader ? item.fileReader.result : item.url }}"
+            alt="user image"
+            tabindex="{{ tabIndex }}"
+          />
+        </div>
+        <div *ngSwitchCase="'video'">
+          <video controls muted>
+            <source [src]="item.videoSrc" type="{{ item.type }}" />
+            Your Browser does not support Video Please switch to firefox or chrome
+            or safari or any modern browser
+          </video>
+        </div>
+        <div *ngSwitchCase="'svg'">
+          <p>TODO: *.svg: {{ item.url }}</p>
+
+          <object type="image/svg+xml" [data]="item.svgSrc" class="logo">
+            Logo
+          </object>
+        </div>
+        <div *ngSwitchCase="'audio'" class="audio-container">
+          <audio controls>
+            <source [src]="item.url" type="audio/mpeg" />
+            Your Browser does not support Audio. Please switch to firefox or
+            chrome or safari or any modern browser
+          </audio>
+        </div>
+        <div *ngSwitchDefault>
+          <img src="{{ item.url }}" alt="item.url" />
+        </div>
+
+      </div>
+      <!-- selected item end -->
+    </div>
     <!-- switch case end -->
 
     <!-- cursor buttons (left | right -> prev | next) -->

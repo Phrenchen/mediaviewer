@@ -1,55 +1,59 @@
 <div class="image-editor-container">
-  <h3>Image Editor</h3>
+  <div class="image-editor-title">
+    <h3>Image Editor</h3>
+    <button (click)="resetBorders($event)">
+      Reset
+    </button>
+  </div>
 
-  <mat-accordion class="example-headers-align" multi>
+  <mat-accordion  multi>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title> Border Sizes </mat-panel-title>
         <mat-panel-description>
           Select width or height for top, right, bottom and left
-          <mat-icon>account_circle</mat-icon>
+          <mat-icon class="use-selected-color">border_all</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
 
       <form [formGroup]="borderForm">
         <div formArrayName="size">
           <div class="border-header">
-            <h2>select axis or reset</h2>
+            <h3>select axis or reset</h3>
 
             <mat-selection-list #axis [multiple]="false" class="axis-selection">
               <mat-list-option
                 *ngFor="let axis of axisOptions; let i = index"
                 [value]="axis"
+                class="axis-option"
               >
                 <!-- {{axis}}  -->
-                <span *ngIf="i === 0; else axisIcon">all</span>
-                <ng-template #axisIcon>
+                  <mat-icon *ngIf="i === 0">border_outer</mat-icon>
                   <!-- rotate icon for vertical selection -->
-                  <mat-icon [ngClass]="{ 'rotate-icon': i === 2 }"
-                    >compare_arrows</mat-icon
+                  <mat-icon *ngIf="i === 1"
+                    >border_horizontal</mat-icon
                   >
-                </ng-template>
+                  <mat-icon *ngIf="i === 2"
+                    >border_vertical</mat-icon
+                  >
               </mat-list-option>
             </mat-selection-list>
-
-            <button (click)="resetBorders($event)">
-              <mat-icon>border_clear</mat-icon>
-            </button>
           </div>
           <!-- <button (click)="addAlias()">+ Add another alias</button> -->
 
-          <div
-            class="border-inputs"
-            *ngFor="let border of borders.controls; let i = index"
-          >
-            <!-- The repeated alias template -->
-            <label for="border-{{ i }}">{{ getLabel("borders", i) }}</label>
-            <mat-slider
-              matInput
-              [formControlName]="i"
-              id="border-{{ i }}"
-            ></mat-slider>
-            {{ border.value }}
+          <div class="input-wrapper">
+            <div class="border-inputs"
+              *ngFor="let border of borders.controls; let i = index"
+            >
+              <!-- The repeated alias template -->
+              <label for="border-{{ i }}">{{ getLabel("borders", i) }}</label>
+              <mat-slider
+                matInput
+                [formControlName]="i"
+                id="border-{{ i }}"
+              ></mat-slider>
+              <input class="input-manually" matInput [formControlName]="i" type="number">
+            </div>
           </div>
         </div>
       </form>
@@ -60,14 +64,12 @@
         <mat-panel-title> Border Colors </mat-panel-title>
         <mat-panel-description>
           Select color for top, right, bottom and left
-          <mat-icon>map</mat-icon>
+          <mat-icon class="use-selected-color">format_color_fill</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-
       <form [formGroup]="borderForm">
         <div formArrayName="color">
           <div class="border-header">
-
             <label for="border-color-select">Select a color</label>
             <input
               id="border-color-select"
@@ -75,30 +77,10 @@
               [colorPicker]="color"
               (colorPickerChange)="updateColor($event)"
             />
-
-            <button (click)="resetBorders($event)">
-              <mat-icon>border_clear</mat-icon>
-            </button>
           </div>
-          <!-- <button (click)="addAlias()">+ Add another alias</button> -->
         </div>
       </form>
     </mat-expansion-panel>
 
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title> Overlay </mat-panel-title>
-        <mat-panel-description>
-          Select blend mode and color
-          <mat-icon>date_range</mat-icon>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-
-      <!-- <mat-form-field appearance="fill">
-        <mat-label>Date</mat-label>
-        <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
-      </mat-form-field>
-      <mat-datepicker #picker></mat-datepicker> -->
-    </mat-expansion-panel>
   </mat-accordion>
 </div>
