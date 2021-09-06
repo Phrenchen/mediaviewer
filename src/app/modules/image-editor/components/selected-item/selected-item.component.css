@@ -59,14 +59,12 @@
   outline-color: red;
   outline-width: var(--f-border-top-height);
 
-  /* border-top-width: var(--f-border-top-height); */
+  border-top-width: var(--f-border-top-height);
   border-right-width: var(--f-border-right-width);
   border-bottom-width: var(--f-border-bottom-height);
   border-left-width: var(--f-border-left-width);
-  border-top-color: var(--f-border-top-color);
-  border-right-color: var(--f-border-right-color);
-  border-bottom-color: var(--f-border-bottom-color);
-  border-left-color: var(--f-border-left-color);
+
+  border-color: var(--f-border-color);
 }
 
 .audio-container {

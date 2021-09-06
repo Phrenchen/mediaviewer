@@ -5,10 +5,7 @@
   --f-border-bottom-height: 0px;
   --f-border-left-width: 0px;
 
-  --f-border-top-color: 'green';
-  --f-border-right-color: 'green';
-  --f-border-bottom-color: 'green';
-  --f-border-left-color: 'green';
+  --f-border-color: 'green';
 
   --image-border-radius: .2rem,
 

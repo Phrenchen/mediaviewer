@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ImageConsts } from '../../constants/ImageConsts';
 
 @Component({
   selector: 'app-image-editor',
@@ -15,6 +16,8 @@ export class ImageEditorComponent implements OnInit {
     '--f-border-left-width',
   ];
 
+  public color: string;
+  public axisOptions = [ImageConsts.ALL, ImageConsts.HORIZONTAL, ImageConsts.VERTICAL];
   public borderForm: FormGroup;
   private borderSizeControlArray: FormArray; // TODO: TYPE
 
@@ -98,6 +101,9 @@ export class ImageEditorComponent implements OnInit {
     });
   }
 
+  public updateColor(color: string): void {
+    document.body.style.setProperty('--f-border-color', color); //set css variable
+  }
 
   public resetBorders(event: MouseEvent | any): void {
     console.log('reset borders');

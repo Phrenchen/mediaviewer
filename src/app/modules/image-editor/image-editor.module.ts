@@ -13,6 +13,8 @@ import {MatListModule} from '@angular/material/list';
 
 import { SelectedItemComponent } from './components/selected-item/selected-item.component';
 
+import { ColorPickerModule } from 'ngx-color-picker';
+
 @NgModule({
   declarations: [ImageEditorComponent, SelectedItemComponent],
   imports: [
@@ -27,6 +29,8 @@ import { SelectedItemComponent } from './components/selected-item/selected-item.
     MatExpansionModule,
     MatInputModule,
     MatIconModule,
+
+    ColorPickerModule,
   ],
   exports: [ImageEditorComponent, SelectedItemComponent],
 })
