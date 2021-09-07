@@ -26,10 +26,9 @@
       class="item-container"
       (click)="itemClicked(i)"
     >
-      <div [ngClass]="{'is-selected': i === selectedFileIndex}">
-        <app-media-item [item]="media" [tabIndex]="i" ></app-media-item>
-
-      </div>
+      <!-- <div [ngClass]="{'is-selected': i === selectedFileIndex}"> -->
+        <app-media-item [item]="media" [tabIndex]="i" [ngClass]="{'is-selected': i === selectedFileIndex}"></app-media-item>
+      <!-- </div> -->
     </div>
   </div>
 </div>

@@ -22,6 +22,8 @@ export class MediaItemComponent implements OnInit, OnDestroy {
   public itemId: number;
   public isPlaying: boolean = false;
 
+  public isHovering: boolean = false;
+
   private playInterval: any;
 
   constructor() {
@@ -37,6 +39,16 @@ export class MediaItemComponent implements OnInit, OnDestroy {
     this.stopInterval();
   }
   // LIFE CYCLE end
+
+  public hoverStart(event: MouseEvent): void {
+    // console.log('hover start');
+    this.isHovering = true;
+  }
+
+  public hoverEnd(event: MouseEvent): void {
+    // console.log('hover end');
+    this.isHovering = false;
+  }
 
   public getUrl(item: MediaFile | null): string | any{
     if(!item) {

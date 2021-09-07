@@ -15,7 +15,7 @@ import { MediaService } from '../../services/media.service';
   styleUrls: ['./file-list.component.css'],
 })
 export class FileListComponent implements OnInit, AfterViewInit {
-  @Input() autoSelectFirst: boolean = true;
+  @Input() autoSelectFirst: boolean = false;
 
   public imagesAvailable: boolean = false;
 

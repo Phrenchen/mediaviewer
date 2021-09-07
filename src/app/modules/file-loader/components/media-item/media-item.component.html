@@ -2,12 +2,12 @@
   <!-- item -->
   <div
     [ngSwitch]="item?.type"
-    class="media-item"
+    class="media-item card"
     [ngClass]="{ 'selected-item': selected }"
   >
 
 
-    <div (click)="onItemClicked()">
+    <div [ngClass]="{'gradient-shadow': isHovering}" class="gradient-shadow2" (mouseover)="hoverStart($event)" (mouseout)="hoverEnd($event)" (click)="onItemClicked()">
       <div *ngSwitchCase="'image'">
         <img
           src="{{getUrl(item)}}"

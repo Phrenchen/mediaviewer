@@ -24,6 +24,17 @@
   --header-height: 21px;
 
   --col-count: 1;
+
+  /* gradient-shadow */
+  --clr-orange: 7 100% 63%;
+  --clr-blue: 239 100% 50%;
+
+  --spacer: 2rem;
+  /* gradient-shadow end */
+
+
+
+
   /* --preferred-item-width: 300px;
   --title-bg-light: #ccc;
   --title-bg-dark: #333; */

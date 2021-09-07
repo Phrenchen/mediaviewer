@@ -22,9 +22,9 @@
   border-radius: 0.3rem;
   overflow: hidden;
 
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.7); */
 
-  transition: all 0.5s ease-out;
+  transition: all 1.5s ease-out;
 }
 
 .media-item > * {
@@ -32,12 +32,15 @@
   /* pointer-events: none; */
 }
 
-.audio-container {
-  background-color: var(--selected-bg-color);
-}
 
-.navi-buttons {
-  /* position: absolute;
+
+
+  .audio-container {
+    background-color: var(--selected-bg-color);
+  }
+
+  .navi-buttons {
+    /* position: absolute;
 
   left: 50%;
   transform: translate(-50%, 0); */
