@@ -15,7 +15,7 @@ export class GridConfiguratorComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public increaseColCount(event): void {
+  public increaseColCount(event: any): void {
     let currColCount: number = this.getCurrentColCount();
 
     currColCount++;
@@ -23,7 +23,7 @@ export class GridConfiguratorComponent implements OnInit {
     this.updateCurrentColCount(currColCount);
   }
 
-  public decreaseColCount(event): void {
+  public decreaseColCount(event: any): void {
     let currColCount: number = this.getCurrentColCount();
     currColCount = currColCount - 1 >= 1 ? currColCount - 1 : 1;
 

@@ -1,7 +1,7 @@
 <div>
   <!-- item -->
   <div
-    [ngSwitch]="item.type"
+    [ngSwitch]="item?.type"
     class="media-item"
     [ngClass]="{ 'selected-item': selected }"
   >
@@ -10,35 +10,35 @@
     <div (click)="onItemClicked()">
       <div *ngSwitchCase="'image'">
         <img
-          src="{{(item.fileReader ? item.fileReader.result : item.url)}}"
+          src="{{getUrl(item)}}"
           alt="user image"
           tabindex="{{ tabIndex }}"
         />
       </div>
       <div *ngSwitchCase="'video'">
         <video controls muted>
-          <source [src]="item.videoSrc" type="{{ item.type }}" />
+          <source [src]="item?.videoSrc" type="{{ item?.type }}" />
           Your Browser does not support Video
           Please switch to firefox or chrome or safari or any modern browser
         </video>
       </div>
       <div *ngSwitchCase="'svg'">
-        <p>TODO: *.svg: {{ item.url }}</p>
+        <p>TODO: *.svg: {{ item?.url }}</p>
 
-        <object type="image/svg+xml" [data]="item.svgSrc" class="logo">
+        <object type="image/svg+xml" [data]="item?.svgSrc" class="logo">
           Logo
         </object>
       </div>
       <div *ngSwitchCase="'audio'" class="audio-container">
         <audio controls>
-          <source [src]="item.url" type="audio/mpeg">
+          <source [src]="item?.url" type="audio/mpeg">
           Your Browser does not support Audio.
           Please switch to firefox or chrome or safari or any modern browser
         </audio>
 
       </div>
       <div *ngSwitchDefault>
-        <img src="{{ item.url }}" alt="item.url" />
+        <img src="{{ item?.url }}" alt="item.url" />
       </div>
     </div>
     <!-- switch case end -->

@@ -35,20 +35,24 @@ export class ImageEditorComponent implements OnInit {
     },
   ];
 
-  public color: string;
+  public color: string = '';
   public axisOptions = [
     ImageConsts.ALL,
     ImageConsts.HORIZONTAL,
     ImageConsts.VERTICAL,
   ];
-  public borderForm: FormGroup;
-  private borderSizeControlArray: FormArray; // TODO: TYPE
+  public borderForm?: FormGroup;
+  private borderSizeControlArray?: FormArray; // TODO: TYPE
 
   constructor(private readonly formbuilder: FormBuilder) {
     this.attributeLabels.set('borders', ['Top', 'Right', 'Bottom', 'Left']);
   }
 
   private updateForm(): void {
+    if (!this.borderSizeControlArray) {
+      return;
+    }
+
     console.log(this.borderSizeControlArray.value, '_____________');
     this.borderSizeControlArray.patchValue([0, 0, 0, 0]);
     console.log(this.borderSizeControlArray.value);
@@ -101,7 +105,7 @@ export class ImageEditorComponent implements OnInit {
 
     this.borderForm.valueChanges.subscribe((changes) => {
       if (changes.size) {
-        changes.size.forEach((size, index) => {
+        changes.size.forEach((size: any, index: number) => {
           // update local values
           this.borderVars[index].value = size;
 
@@ -131,10 +135,10 @@ export class ImageEditorComponent implements OnInit {
     this.updateForm(); // patch form with new values
   }
   public getLabel(group: string, index: number): string {
-    return this.attributeLabels.get(group)[index];
+    return (this.attributeLabels.get(group) as string[])[index];
   }
 
   public get borders(): FormArray {
-    return this.borderForm.get('size') as FormArray;
+    return this.borderForm?.get('size') as FormArray;
   }
 }

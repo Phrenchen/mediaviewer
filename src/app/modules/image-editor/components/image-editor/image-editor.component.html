@@ -16,7 +16,7 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
 
-      <form [formGroup]="borderForm">
+      <form [formGroup]="borderForm!">
         <div formArrayName="size">
           <div class="border-header">
             <h3>select axis</h3>
@@ -70,7 +70,8 @@
           <mat-icon class="use-selected-color">format_color_fill</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <form [formGroup]="borderForm">
+      <!-- fishy? borderForm!  -->
+      <form [formGroup]="borderForm!">
         <div formArrayName="color">
           <div class="border-header">
             <label for="border-color-select">Select a color</label>

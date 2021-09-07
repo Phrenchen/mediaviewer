@@ -31,7 +31,7 @@ export class SelectedItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('media type:', this.item.type);
+    console.log('media type:', this.item?.type);
   }
 
 
@@ -39,6 +39,19 @@ export class SelectedItemComponent implements OnInit {
     this.stopInterval();
   }
   // LIFE CYCLE end
+
+  public getUrl(item: MediaFile | null): string | any{
+    if(!item) {
+      return '';
+    }
+
+    if (item.fileReader) {
+      return item.fileReader.result;
+    }
+    else {
+      item.url;
+    }
+  }
 
   public togglePlayPause(): void {
     this.isPlaying = !this.isPlaying;
@@ -74,7 +87,7 @@ export class SelectedItemComponent implements OnInit {
   }
 
   public onItemClicked(): void {
-    this.itemClicked.emit(this.item);
+    this.itemClicked.emit(this.item as MediaFile);
   }
 
   public previous(event: Event): void {

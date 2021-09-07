@@ -7,7 +7,8 @@ export class MediaService {
   constructor() {}
 
   public getTypeByUrl(url: string): string {
-    const fileSuffix: string = url.split('.').pop().toLowerCase();
+    const urlParts: string[] = url.split('.');
+    const fileSuffix: string = urlParts.length > 0 ? urlParts[0].toLowerCase() : '';
     let type: string;
 
     switch (fileSuffix) {
@@ -55,26 +56,26 @@ export class MediaService {
 
   // jpg, png, gif
   public isBitmapImage(type: string): boolean {
-    return type && type.indexOf('image') >= 0 && !this.isSVG(type);
+    return type.indexOf('image') >= 0 && !this.isSVG(type);
   }
 
   // svg
   public isSVG(type: string): boolean {
-    return type && type.indexOf('svg') >= 0;
+    return type.indexOf('svg') >= 0;
   }
 
   // pdf
   public isPDF(type: string): boolean {
-    return type && type === 'application/pdf';
+    return type === 'application/pdf';
   }
 
   // mpg, ogg, mov(?)
   public isVideo(type: string): boolean {
-    return type && type.indexOf('video') >= 0;
+    return type.indexOf('video') >= 0;
   }
 
   // mp3, ogg
   public isAudio(type: string): boolean {
-    return type && type.indexOf('audio') >= 0;
+    return type.indexOf('audio') >= 0;
   }
 }

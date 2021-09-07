@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ToggleAnythingComponent implements OnInit {
 
-  @Input() enabledLabel: string;
-  @Input() disabledLabel: string;
+  @Input() enabledLabel: string = '';
+  @Input() disabledLabel: string = '';
   @Input() initialState: boolean = false;
 
   @Output() toggled: EventEmitter<boolean> = new EventEmitter<boolean>();

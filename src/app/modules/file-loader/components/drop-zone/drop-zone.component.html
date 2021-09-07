@@ -35,7 +35,7 @@
 
   <div class="list-header">
     <p *ngIf="hasFiles">
-      {{ (fileService.files$ | async).length }} Dateien geöffnet.
+      {{ (fileService.files$ | async)?.length }} Dateien geöffnet.
     </p>
     <button mat-raised-button *ngIf="hasFiles" (click)="resetFiles()">
       Liste löschen

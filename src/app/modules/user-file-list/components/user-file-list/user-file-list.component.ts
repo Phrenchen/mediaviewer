@@ -22,14 +22,14 @@ export class UserFileListComponent implements OnInit {
 
   private extractPathInfo(files: MediaFile[]): MediaPath[] {
     const paths: MediaPath[] = files.map(file => {
-      const splitUrl: string[] = file.url.split('/');
+      const splitUrl: string[] = file.url?.split('/') as string[];
 
       return {
         fileName: splitUrl.pop(),
         path: splitUrl.join('/'),
         isSelected: false
       }
-    });
+    }) as MediaPath[];
 
     return paths;
   }

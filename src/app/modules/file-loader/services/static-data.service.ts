@@ -16,9 +16,8 @@ export class StaticDataService {
 
   public get(assetSetName: AssetSetEnum): any[] {
     if (this.assetMap.has(assetSetName)) {
-      return this.assetMap.get(assetSetName);
+      return this.assetMap.get(assetSetName) as any[];
     }
-
     return [];
   }
 

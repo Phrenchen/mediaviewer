@@ -54,8 +54,8 @@ export class FileService {
         rawType: this.mediaService.getTypeByUrl(fileUrl),
         type: this.mediaService.getTypeByUrl(fileUrl),
         url: fileUrl,
-        fileReader: null,
-        file: null,
+        fileReader: undefined,
+        file: undefined,
         svgSrc: null,
         videoSrc: null,
       };
@@ -72,7 +72,7 @@ export class FileService {
       const media: MediaFile = {
         rawType: file.type,
         type: this.mediaService.getType(file.type),
-        url: null,
+        url: undefined,
         fileReader: fr,
         file: file,
         svgSrc: null,
