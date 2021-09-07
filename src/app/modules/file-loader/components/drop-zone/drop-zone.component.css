@@ -1,7 +1,12 @@
 :host {
   z-index: 9999;
-  position: sticky;
-  top: 0;
+  position: absolute;
+  top: var(--header-height);
+  /* top: 100px; */
+  left: 0;
+  right: 0;
+  background-color: var(--dropzone-background-color);
+
 }
 
 .dropzone {

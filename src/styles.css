@@ -46,6 +46,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   box-shadow: 0 0 3rem hsl(0 0 0 / 0.2);
 }
 .gradient-shadow {
+
   background: linear-gradient(
     45deg,
     hsl(var(--clr-orange)),

@@ -7,7 +7,7 @@
   >
 
 
-    <div [ngClass]="{'gradient-shadow': isHovering}" class="gradient-shadow2" (mouseover)="hoverStart($event)" (mouseout)="hoverEnd($event)" (click)="onItemClicked()">
+    <div [ngClass]="{'gradient-shadow': isHovering}" (mouseover)="hoverStart($event)" (mouseout)="hoverEnd($event)" (click)="onItemClicked()">
       <div *ngSwitchCase="'image'">
         <img
           src="{{getUrl(item)}}"

@@ -20,9 +20,9 @@ export class FileService {
   }
 
   public updateFiles(files: any[]): void {
-    // console.log('updating with files:', files);
+    console.log('updating with files:', files);
     if(files.length > 0) {
-      this.files = [];
+      this.files = [];        // clear list?
       this.initFiles(files);
       this.files$$.next(this.files);
     }
@@ -68,7 +68,6 @@ export class FileService {
 
     const fr: FileReader = new FileReader();
     fr.onload = (result) => {
-      fr.readAsDataURL(file as File);
       const media: MediaFile = {
         rawType: file.type,
         type: this.mediaService.getType(file.type),
@@ -81,10 +80,12 @@ export class FileService {
         // : null,
         videoSrc: this.sanitizer.bypassSecurityTrustUrl(
           URL.createObjectURL(file)
-        ),
+          ),
+        };
+        this.files.push(media);
+        this.files$$.next(this.files);
+        // console.log('media file dropped: ', media);
       };
-      this.files.push(media);
-      // console.log('media file dropped: ', media);
-    };
+    fr.readAsDataURL(file as File);
   }
 }

@@ -70,6 +70,9 @@ export class DropZoneComponent implements OnInit, OnChanges, OnDestroy {
       case 3:
         this.updateFiles(this.staticData.get(AssetSetEnum.MP3));
         break;
+      case 4:
+        this.updateFiles(this.staticData.get(AssetSetEnum.GIANT_CATS));
+        break;
       default:
         this.updateFiles(this.staticData.get(AssetSetEnum.CURIOUS_ZELDA));
         break;

@@ -21,15 +21,24 @@
   --selected-bg-color: var(--dark-bg);
   --selected-txt-color: var(--light-txt);
 
-  --header-height: 21px;
+  --header-height: 46px;
+  --dropzone-background-color: rgb(153, 153, 153);
 
   --col-count: 1;
 
   /* gradient-shadow */
-  --clr-orange: 7 100% 63%;
-  --clr-blue: 239 100% 50%;
 
-  --spacer: 2rem;
+  --color: hsl(37, 100%, 84%);
+
+
+  /* --clr-orange: 7 100% 63%; */
+  /* --clr-orange: 212, 100%, 86%; */
+  --clr-orange: 37, 100%, 84%;
+  /* --clr-blue: 239 100% 50%; */
+  /* --clr-blue: 212, 100%, 84%; */
+  --clr-blue: 96, 100%, 84%;
+
+  --spacer: 4rem;
   /* gradient-shadow end */
 
 

@@ -16,7 +16,7 @@
       <p>oder</p>
     </div>
 
-    <!-- <label class="file-upload">
+    <label class="file-upload">
       <input
         type="file"
         #fileDropRef
@@ -25,7 +25,7 @@
         (change)="fileBrowserHandler($event)"
       />
       <b>Dateien suchen</b>
-    </label> -->
+    </label>
 
     <div *ngIf="!hasFiles">
       <p>Zeigt Bilder, GIFs und Videos an</p>
@@ -42,6 +42,7 @@
     </button>
   </div>
   <button *ngIf="!hasFiles" (click)="showExamples(0)">Zelda</button>
+  <button *ngIf="!hasFiles" (click)="showExamples(4)">GIANT CATS!</button>
   <button *ngIf="!hasFiles" (click)="showExamples(1)">Beispiel GIF</button>
   <button *ngIf="!hasFiles" (click)="showExamples(2)">Beispiel SVG</button>
   <button *ngIf="!hasFiles" (click)="showExamples(3)">Beispiel MP3</button>
