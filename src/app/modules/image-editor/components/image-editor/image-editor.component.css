@@ -1,0 +1,87 @@
+.image-editor-container {
+  /* border: 3px dashed black; */
+  background-color: white;
+/*
+  position: absolute;
+  top: 0;
+  left: 0; */
+
+  width: 100%;
+  max-width: min(400px, 100vw);
+
+  /* min-height: 400px; */
+}
+
+.image-editor-title {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#border-color-select {
+  line-height: 2;
+  cursor: crosshair;
+  background-color: var(--f-border-color);
+  /* border: 2px solid var(--f-border-color); */
+  border: 2px solid black;
+  border-radius: 0;
+}
+
+.border-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.border-header label {
+  cursor: crosshair;
+}
+
+.axis-selection {
+  display: flex;
+  gap: 1rem;
+}
+
+.axis-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotate-icon {
+  transform: rotate(90deg);
+}
+
+.input-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* just */
+}
+
+.border-inputs {
+
+  display: flex;
+  width: 100%;
+  /* max-width: 300px; */
+  gap: 1rem;
+  justify-content: space-between;
+  /* justify-self: center; */
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.input-manually {
+  width: 100px;
+}
+
+.use-selected-color {
+  color: var(--f-border-color);
+  opacity: 1;
+}
+
+h2, h3 {
+  margin: 0;
+}

@@ -1,0 +1,29 @@
+.button {
+  padding: 0.7rem 0;
+
+  /* width: 100%;
+  max-width: 50px; */
+
+  padding: .5rem 1rem;
+  opacity: .85;
+  z-index: 2;
+
+  cursor: pointer;
+
+  transition: all .3s ease-out;
+}
+
+.column-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+
+  color: var(--selected-txt-color);
+  background-color: var(--selected-bg-color);
+}
+
+p {
+  white-space: nowrap;
+}

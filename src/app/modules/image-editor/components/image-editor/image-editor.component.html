@@ -1,0 +1,89 @@
+<div class="image-editor-container">
+  <div class="image-editor-title">
+    <h3>Image Editor</h3>
+    <button (click)="resetBorders($event)">
+      Reset
+    </button>
+  </div>
+
+  <mat-accordion  multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Border Sizes </mat-panel-title>
+        <mat-panel-description>
+          Set width
+          <mat-icon class="use-selected-color">border_all</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="borderForm">
+        <div formArrayName="size">
+          <div class="border-header">
+            <h3>select axis</h3>
+
+            <mat-selection-list #axis [multiple]="false" class="axis-selection">
+              <mat-list-option
+                *ngFor="let axis of axisOptions; let i = index"
+                [value]="axis"
+                class="axis-option"
+              >
+                <!-- {{axis}}  -->
+                  <mat-icon *ngIf="i === 0">border_outer</mat-icon>
+                  <!-- rotate icon for vertical selection -->
+                  <mat-icon *ngIf="i === 1"
+                    >border_horizontal</mat-icon
+                  >
+                  <mat-icon *ngIf="i === 2"
+                    >border_vertical</mat-icon
+                  >
+              </mat-list-option>
+            </mat-selection-list>
+          </div>
+          <!-- <button (click)="addAlias()">+ Add another alias</button> -->
+
+          <div class="input-wrapper">
+
+            <div class="border-inputs"
+              *ngFor="let border of borders.controls; let i = index"
+            >
+              <!-- The repeated alias template -->
+              <label for="border-{{ i }}">{{ getLabel("borders", i) }}</label>
+              <mat-slider
+                matInput
+                [formControlName]="i"
+                id="border-{{ i }}"
+              ></mat-slider>
+
+              <div class="input-manually" type="number"> {{borderVars[i].value}} </div>
+
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Border Colors </mat-panel-title>
+        <mat-panel-description>
+          Select color
+          <mat-icon class="use-selected-color">format_color_fill</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <form [formGroup]="borderForm">
+        <div formArrayName="color">
+          <div class="border-header">
+            <label for="border-color-select">Select a color</label>
+            <input
+              id="border-color-select"
+              [style.background]="color"
+              [colorPicker]="color"
+              (colorPickerChange)="updateColor($event)"
+            />
+          </div>
+        </div>
+      </form>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>

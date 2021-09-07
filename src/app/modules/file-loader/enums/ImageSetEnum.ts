@@ -1,0 +1,5 @@
+export enum ImageSetEnum {
+  SINGLE_GIF = 'SINGLE_GIF',
+  CURIOUS_ZELDA = 'CURIOUS_ZELDA',
+  SINGLE_SVG = "SINGLE_SVG"
+}

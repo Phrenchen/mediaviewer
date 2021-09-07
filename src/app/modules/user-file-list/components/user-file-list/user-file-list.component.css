@@ -1,0 +1,10 @@
+.media-path {
+  border: 3px solid rgba(255, 255, 255, 0);
+  /* padding: 1rem;
+
+  cursor: pointer; */
+}
+
+.selected-file {
+  border: 3px solid green;
+}

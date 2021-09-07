@@ -1,0 +1,35 @@
+<div class="wrapper" [ngClass]="{ 'single-item-list': mediaFiles.length === 1 }">
+  <!-- selected item -->
+  <!-- <app-media-item
+    *ngIf="selectedFileIndex >= 0"
+    [item]="mediaFiles[selectedFileIndex]"
+    [selected]="true"
+    [showNaviButtons]="mediaFiles.length > 1"
+    (itemClicked)="itemClicked(selectedFileIndex)"
+    (selectPrevious)="selectPrevious($event)"
+    (selectNext)="selectNext($event)"
+  ></app-media-item> -->
+  <app-selected-item
+  *ngIf="selectedFileIndex >= 0"
+    [item]="mediaFiles[selectedFileIndex]"
+    [selected]="true"
+    [showNaviButtons]="mediaFiles.length > 1"
+    (itemClicked)="itemClicked(selectedFileIndex)"
+    (selectPrevious)="selectPrevious($event)"
+    (selectNext)="selectNext($event)"
+  ></app-selected-item>
+
+
+  <div class="items" [ngClass]="{ 'multiple-item-list': mediaFiles.length > 1 }">
+    <div
+      *ngFor="let media of mediaFiles; let i = index"
+      class="item-container"
+      (click)="itemClicked(i)"
+    >
+      <div [ngClass]="{'is-selected': i === selectedFileIndex}">
+        <app-media-item [item]="media" [tabIndex]="i" ></app-media-item>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+export enum AssetSetEnum {
+  SINGLE_GIF = 'SINGLE_GIF',
+  CURIOUS_ZELDA = 'CURIOUS_ZELDA',
+  SINGLE_SVG = "SINGLE_SVG",
+  MP3 = "MP3",
+}
