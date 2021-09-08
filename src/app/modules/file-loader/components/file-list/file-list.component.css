@@ -4,9 +4,9 @@
 
 .items {
   display: grid;
+  gap: .2vmin;
   /* grid-template-columns: 1fr;
   justify-self: center;
-  gap: 1rem;
 
   width: 100%;
   height: 100%;

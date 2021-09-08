@@ -21,7 +21,7 @@ import { StaticDataService } from '../../services/static-data.service';
 })
 export class DropZoneComponent implements OnInit, OnChanges, OnDestroy {
   @Input() reset: boolean = false;
-  @Input() initiallyShowExamples: boolean = true; // TODO: SETTING!
+  @Input() initiallyShowExamples: boolean = false; // TODO: SETTING!
 
   public hasFiles: boolean = false;
   private subscriptions: Subscription = new Subscription();
