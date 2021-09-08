@@ -1,5 +1,5 @@
 <div class="column-buttons">
-  <p>Anzahl Spalten ändern</p>
-  <button class="button" (click)="decreaseColCount($event)">-</button>
-  <button class="button" (click)="increaseColCount($event)">+</button>
+  <!-- <p>Anzahl Spalten ändern</p> -->
+  <button mat-raised-button matTooltip="Weniger Spalten" [matTooltipPosition]="'below'" class="button" (click)="decreaseColCount($event)">-</button>
+  <button mat-raised-button matTooltip="Mehr Spalten" [matTooltipPosition]="'below'" class="button" (click)="increaseColCount($event)">+</button>
 </div>

@@ -1,6 +1,15 @@
 <div>
-  <!-- cursor buttons (left | right -> prev | next) -->
-  <div *ngIf="selected && showNaviButtons" class="navi-buttons buttons-top">
+
+
+  <!-- selected item -->
+  <div
+    [ngSwitch]="item?.type"
+    class="media-item"
+    [ngClass]="{ 'selected-item': selected }"
+  >
+
+   <!-- cursor buttons (left | right -> prev | next) -->
+   <div *ngIf="selected && showNaviButtons" class="navi-buttons buttons-top">
     <div>
       <button (click)="previous($event)">Prev</button>
       <button (click)="next($event)">Next</button>
@@ -26,13 +35,6 @@
       </div>
     </div>
   </div>
-
-  <!-- selected item -->
-  <div
-    [ngSwitch]="item?.type"
-    class="media-item"
-    [ngClass]="{ 'selected-item': selected }"
-  >
 
   <div class="editor-and-media">
     <div *ngIf="selected && showEditor" class="editor-container">

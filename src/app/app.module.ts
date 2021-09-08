@@ -2,24 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { StartComponent } from './components/start/start.component';
-import { TopCommentComponent } from './components/top-comment/top-comment.component';
 import { FileLoaderModule } from './modules/file-loader/file-loader.module';
 import { ThemeSwitchModule } from './modules/theme-switch/theme-switch.module';
 import { ToggleAnythingModule } from './modules/toggle-anything/toggle-anything.module';
 import { UserFileListModule } from './modules/user-file-list/user-file-list.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { SettingsComponent } from './components/settings/settings.component';
 @NgModule({
   declarations: [
     AppComponent,
-    // DropZoneComponent,
-    // DndDirective,
-    // FileListComponent,
-    // MediaItemComponent,
-    // GridConfiguratorComponent,
-    StartComponent,
-    TopCommentComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FileLoaderModule,
     UserFileListModule,
     ToggleAnythingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

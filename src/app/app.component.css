@@ -1,5 +1,14 @@
+.hover-over-everything {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 999999999999;
+}
+
 .outer-container {
-  /* border: 3px dashed deeppink; */
+  position: relative;
+
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -9,24 +18,25 @@
 
 header {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
   width: 100%;
 }
 
-.content {
-  /* border: 3px dashed blue; */
+.app-settings {
+  margin: 1rem auto;
+}
 
+.content {
   width: 100%;
-  height: calc(100vh - var(--header-height));
+  height: 100%;
 
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
+
 }
 
 .files {
@@ -34,7 +44,6 @@ header {
   width: 100%;
   justify-content: center;
   gap: 3rem;
-  /* justify-content: center; */
 }
 
 /*

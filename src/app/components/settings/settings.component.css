@@ -1,0 +1,20 @@
+.setting-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+
+
+  width: 100%;
+}
+
+.setting-container > * {
+  outline: 3px solid darkgoldenrod;
+  -webkit-box-shadow: 13px 12px 15px 5px #CECECE;
+  box-shadow: 13px 12px 15px 5px #CECECE;
+
+  padding: .5rem .2rem;
+
+  flex-grow: 1;
+}

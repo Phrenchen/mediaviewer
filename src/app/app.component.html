@@ -1,30 +1,20 @@
 <div class="outer-container">
   <header>
-    <label class="file-upload" *ngIf="showUI">
-      <input
-        type="file"
-        #fileDropRef
-        id="fileDropRef"
-        multiple
-        (change)="fileBrowserHandler($event)"
-      />
-      <!-- <b>Dateien suchen</b> -->
-      <b></b>
-    </label>
-    <!-- <app-top-comment *ngIf="showUI">
-      <app-start></app-start>
-    </app-top-comment> -->
-    <app-grid-configurator></app-grid-configurator>
-    <app-theme-switch *ngIf="showUI"></app-theme-switch>
     <app-toggle-anything
-      [initialState]="true"
+      class="hover-over-everything"
+      *ngIf="fileCount > 0"
+      [initialState]="false"
       [enabledLabel]="'Hide UI'"
       [disabledLabel]="'Show UI'"
       (toggled)="showUI = $event"
     ></app-toggle-anything>
+
+    <app-settings *ngIf="showUI" class="app-settings"></app-settings>
+
+
   </header>
   <div class="content">
-    <app-drop-zone *ngIf="showUI"></app-drop-zone>
+    <app-drop-zone *ngIf="showDropzone"></app-drop-zone>
     <div class="files">
       <!-- todo: add toggle: icon button? -->
       <!-- <app-user-file-list *ngIf="showUI && (fileService.files$ | async).length > 0"></app-user-file-list> -->

@@ -6,6 +6,8 @@ import { FileListComponent } from './components/file-list/file-list.component';
 import { MediaItemComponent } from './components/media-item/media-item.component';
 import { GridConfiguratorComponent } from './components/grid-configurator/grid-configurator.component';
 import { ImageEditorModule } from '../image-editor/image-editor.module';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,10 @@ import { ImageEditorModule } from '../image-editor/image-editor.module';
   ],
   imports: [
     CommonModule,
-    ImageEditorModule],
+    ImageEditorModule,
+    MatButtonModule,
+    MatTooltipModule,
+  ],
   exports: [
     DropZoneComponent,
     DndDirective,

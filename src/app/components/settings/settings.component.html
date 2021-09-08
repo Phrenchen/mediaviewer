@@ -1,0 +1,15 @@
+<div class="setting-container">
+  <app-grid-configurator></app-grid-configurator>
+  <label class="file-upload">
+    <input
+      type="file"
+      #fileDropRef
+      id="fileDropRef"
+      multiple
+      (change)="fileBrowserHandler($event)"
+    />
+    <!-- <b>Dateien suchen</b> -->
+    <b></b>
+  </label>
+  <app-theme-switch></app-theme-switch>
+</div>
