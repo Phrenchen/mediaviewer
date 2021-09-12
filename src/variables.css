@@ -1,11 +1,11 @@
 :root {
   /* filters */
   --f-border-top-height: 5px;
-  --f-border-right-width: 0px;
-  --f-border-bottom-height: 0px;
-  --f-border-left-width: 0px;
+  --f-border-right-width: 5px;
+  --f-border-bottom-height: 5px;
+  --f-border-left-width: 5px;
 
-  --f-border-color: 'green';
+  --f-border-color: '#2ed052';
 
   --image-border-radius: .2rem,
 

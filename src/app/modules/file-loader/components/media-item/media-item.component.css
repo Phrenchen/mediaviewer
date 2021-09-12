@@ -50,11 +50,11 @@
 
 
 .buttons-top {
-  top: min(4rem, 3vh);
+  /* top: min(4rem, 3vh); */
 }
 
 .buttons-bottom {
-  bottom: min(4rem, 3vh);
+  /* bottom: min(4rem, 3vh); */
   /* bottom: 4rem; */
 }
 

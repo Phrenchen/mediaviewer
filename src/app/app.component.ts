@@ -13,13 +13,11 @@ export class AppComponent {
 
   constructor(public readonly fileService: FileService) {
     this.fileService.files$.subscribe(files => {
-      console.log('currently ', files.length, 'files');
       this.fileCount = files.length;
-
+      if(this.fileCount === 0) {
+        this.showUI = false;
+      }
       this.showDropzone = this.fileCount === 0;
     });
   }
-
-
-
 }

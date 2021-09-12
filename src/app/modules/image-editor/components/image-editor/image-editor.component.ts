@@ -53,9 +53,9 @@ export class ImageEditorComponent implements OnInit {
       return;
     }
 
-    console.log(this.borderSizeControlArray.value, '_____________');
-    this.borderSizeControlArray.patchValue([0, 0, 0, 0]);
-    console.log(this.borderSizeControlArray.value);
+    // console.log(this.borderSizeControlArray.value, '_____________');
+    this.borderSizeControlArray.patchValue([0, 0, 0, 0]);   // ?????????????????????????????????? replace with 0?
+    // console.log(this.borderSizeControlArray.value);
   }
 
   ngOnInit(): void {
@@ -79,10 +79,10 @@ export class ImageEditorComponent implements OnInit {
       .getPropertyValue(this.borderVars[3].varKey)
       .replace('px', '') as unknown as number; //get
 
-    console.log(
-      'bodyStyles.getPropertyValue(variables[0])',
-      bodyStyles.getPropertyValue(this.borderVars[0].varKey)
-    );
+    // console.log(
+    //   'bodyStyles.getPropertyValue(variables[0])',
+    //   bodyStyles.getPropertyValue(this.borderVars[0].varKey)
+    // );
 
     this.borderSizeControlArray = this.formbuilder.array([
       this.formbuilder.control(topHeight, Validators.required), // top
@@ -90,6 +90,8 @@ export class ImageEditorComponent implements OnInit {
       this.formbuilder.control(bottomHeight, Validators.required), // bottom
       this.formbuilder.control(leftWidth, Validators.required), // left
     ]);
+
+
 
     this.borderForm = this.formbuilder.group({
       size: this.formbuilder.array(this.borderSizeControlArray.controls),
@@ -109,7 +111,7 @@ export class ImageEditorComponent implements OnInit {
           // update local values
           this.borderVars[index].value = size;
 
-          console.log('writing variable', this.borderVars[index]);
+          // console.log('writing variable', this.borderVars[index]);
           document.body.style.setProperty(
             this.borderVars[index].varKey,
             size + 'px'

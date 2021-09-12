@@ -21,7 +21,7 @@ import { StaticDataService } from '../../services/static-data.service';
 })
 export class DropZoneComponent implements OnInit, OnChanges, OnDestroy {
   @Input() reset: boolean = false;
-  @Input() initiallyShowExamples: boolean = false; // TODO: SETTING!
+  @Input() autoSelectExamples: boolean = false; // TODO: SETTING!
 
   public hasFiles: boolean = false;
   private subscriptions: Subscription = new Subscription();
@@ -38,7 +38,7 @@ export class DropZoneComponent implements OnInit, OnChanges, OnDestroy {
       })
     );
 
-    if (this.initiallyShowExamples) {
+    if (this.autoSelectExamples) {
       setTimeout(() => {
         this.showExamples(0);
       }, 0);

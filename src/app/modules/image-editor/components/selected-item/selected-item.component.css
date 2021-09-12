@@ -38,8 +38,8 @@
   gap: 1rem;
 
   width: 100%;
-  max-width: 80vw;
-  max-height: 80vh;
+  max-width: 60vw;
+  max-height: 60vh;
 
   margin: 1rem 0;
 
@@ -68,7 +68,7 @@
 
 
 
-  border-style: solid;
+  border-style: inset solid;
   border-top-width: var(--f-border-top-height);
   border-right-width: var(--f-border-right-width);
   border-bottom-width: var(--f-border-bottom-height);
@@ -93,14 +93,13 @@
 }
 
 
-.buttons-top {
+/* .buttons-top {
   top: min(4rem, 3vh);
-}
+} */
 
-.buttons-bottom {
+/* .buttons-bottom {
   bottom: min(4rem, 3vh);
-  /* bottom: 4rem; */
-}
+} */
 
 
 .selected-item {

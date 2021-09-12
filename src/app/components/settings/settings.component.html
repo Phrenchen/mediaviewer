@@ -1,5 +1,8 @@
 <div class="setting-container">
   <app-grid-configurator></app-grid-configurator>
+  <button mat-raised-button *ngIf="fileCount > 0" (click)="resetFiles()">
+    Liste löschen
+  </button>
   <label class="file-upload">
     <input
       type="file"
