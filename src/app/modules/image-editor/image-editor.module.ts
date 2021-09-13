@@ -9,13 +9,13 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatListModule} from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
-
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 import { SelectedItemComponent } from './components/selected-item/selected-item.component';
 
 import { ColorPickerModule } from 'ngx-color-picker';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 @NgModule({
   declarations: [ImageEditorComponent, SelectedItemComponent],
@@ -33,6 +33,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
     MatIconModule,
     MatButtonModule,
 
+    ImageCropperModule,
     ColorPickerModule,
   ],
   exports: [ImageEditorComponent, SelectedItemComponent],

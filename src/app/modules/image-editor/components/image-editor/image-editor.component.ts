@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ImageCroppedEvent, LoadedImage } from 'ngx-image-cropper';
+import { MediaFile } from 'src/app/modules/file-loader/interfaces/MediaFile';
 import { ImageConsts } from '../../constants/ImageConsts';
 
 @Component({
@@ -8,13 +10,11 @@ import { ImageConsts } from '../../constants/ImageConsts';
   styleUrls: ['./image-editor.component.css'],
 })
 export class ImageEditorComponent implements OnInit {
-  private attributeLabels: Map<string, string[]> = new Map<string, string[]>();
-  // private borderWidthVariables: string[] = [
-  //   '--f-border-top-height',
-  //   '--f-border-right-width',
-  //   '--f-border-bottom-height',
-  //   '--f-border-left-width',
-  // ];
+
+  @Input() item!: MediaFile;
+  @Output() selectPrevious: EventEmitter<any> = new EventEmitter<any>();
+  @Output() selectNext: EventEmitter<any> = new EventEmitter<any>();
+  @Output() itemClicked: EventEmitter<MediaFile> = new EventEmitter<MediaFile>();
 
   public borderVars: Array<{ varKey: string; value: number }> = [
     {
@@ -42,10 +42,19 @@ export class ImageEditorComponent implements OnInit {
     ImageConsts.VERTICAL,
   ];
   public borderForm?: FormGroup;
+
+
+  private attributeLabels: Map<string, string[]> = new Map<string, string[]>();
   private borderSizeControlArray?: FormArray; // TODO: TYPE
+
+  // CROP
+  public imageChangedEvent: any = '';
+  public croppedImage: any = '';
+
 
   constructor(private readonly formbuilder: FormBuilder) {
     this.attributeLabels.set('borders', ['Top', 'Right', 'Bottom', 'Left']);
+
   }
 
   private updateForm(): void {
@@ -54,7 +63,7 @@ export class ImageEditorComponent implements OnInit {
     }
 
     // console.log(this.borderSizeControlArray.value, '_____________');
-    this.borderSizeControlArray.patchValue([0, 0, 0, 0]);   // ?????????????????????????????????? replace with 0?
+    this.borderSizeControlArray.patchValue([0, 0, 0, 0]); // ?????????????????????????????????? replace with 0?
     // console.log(this.borderSizeControlArray.value);
   }
 
@@ -90,8 +99,6 @@ export class ImageEditorComponent implements OnInit {
       this.formbuilder.control(bottomHeight, Validators.required), // bottom
       this.formbuilder.control(leftWidth, Validators.required), // left
     ]);
-
-
 
     this.borderForm = this.formbuilder.group({
       size: this.formbuilder.array(this.borderSizeControlArray.controls),
@@ -142,5 +149,44 @@ export class ImageEditorComponent implements OnInit {
 
   public get borders(): FormArray {
     return this.borderForm?.get('size') as FormArray;
+  }
+
+  //
+  public onItemClicked(): void {
+    console.log('cliggy dat');
+    this.itemClicked.emit(this.item as MediaFile);
+  }
+
+  public previous(event: Event): void {
+    this.blockClick(event);
+    this.selectPrevious.emit(this.item);
+  }
+
+  public next(event: Event): void {
+    this.blockClick(event);
+    this.selectNext.emit(this.item);
+  }
+
+  private blockClick(event: Event) {
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+  }
+
+
+  // CROP
+  fileChangeEvent(event: any): void {
+    this.imageChangedEvent = event;
+  }
+  imageCropped(event: ImageCroppedEvent) {
+    this.croppedImage = event.base64;
+  }
+  imageLoaded(image: LoadedImage) {
+    // show cropper
+  }
+  cropperReady() {
+    // cropper ready
+  }
+  loadImageFailed() {
+    // show message
   }
 }

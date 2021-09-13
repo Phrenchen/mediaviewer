@@ -7,11 +7,11 @@ import { MediaFile } from 'src/app/modules/file-loader/interfaces/MediaFile';
   styleUrls: ['./selected-item.component.css']
 })
 export class SelectedItemComponent implements OnInit {
-  @Input() item: MediaFile | null = null;
-  @Input() selected: boolean = false;
-  @Input() tabIndex: number = 0;
-  @Input() showNaviButtons: boolean = false;
-  @Input() showEditor: boolean = true;
+  @Input() item!: MediaFile;
+  // @Input() selected: boolean = false;
+  // @Input() tabIndex: number = 0;
+  // @Input() showNaviButtons: boolean = false;
+  // @Input() showEditor: boolean = true;
 
 
   @Output() itemClicked: EventEmitter<MediaFile> =

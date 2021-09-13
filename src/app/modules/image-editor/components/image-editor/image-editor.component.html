@@ -86,5 +86,30 @@
       </form>
     </mat-expansion-panel>
 
+    <!-- (itemClicked)="itemClicked(selectedFileIndex)" -->
+    <!-- (selectPrevious)="selectPrevious($event)" -->
+    <!-- (selectNext)="selectNext($event)" -->
+    <!-- [showNaviButtons]="mediaFiles.length > 1" -->
+
+    <app-selected-item
+      (click)="onItemClicked()"
+      [item]="item"
+    ></app-selected-item>
+
+
+    <!--
+    <image-cropper
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="4 / 3"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded($event)"
+    (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"
+></image-cropper> -->
+
+<img [src]="croppedImage" />
+
   </mat-accordion>
 </div>

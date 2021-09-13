@@ -9,15 +9,39 @@
     (selectPrevious)="selectPrevious($event)"
     (selectNext)="selectNext($event)"
   ></app-media-item> -->
-  <app-selected-item
+
+
+  <!-- reloacte from selected item -->
+  <!-- [showNaviButtons]="mediaFiles.length > 1" -->
+  <!-- (selectPrevious)="selectPrevious($event)" -->
+  <!-- (selectNext)="selectNext($event)" -->
+  <!-- <div
+  *ngIf="selected && showNaviButtons"
+  class="navi-buttons buttons-bottom"
+>
+  <button (click)="previous($event)">Prev</button>
+  <button (click)="next($event)">Next</button>
+</div> -->
+
+
+  <app-image-editor
   *ngIf="selectedFileIndex >= 0"
     [item]="mediaFiles[selectedFileIndex]"
-    [selected]="true"
+    (itemClicked)="itemClicked(selectedFileIndex)"
+    (selectPrevious)="selectPrevious($event)"
+    (selectNext)="selectNext($event)"
+  ></app-image-editor>
+
+
+
+  <!-- <app-selected-item
+  *ngIf="selectedFileIndex >= 0"
+    [item]="mediaFiles[selectedFileIndex]"
     [showNaviButtons]="mediaFiles.length > 1"
     (itemClicked)="itemClicked(selectedFileIndex)"
     (selectPrevious)="selectPrevious($event)"
     (selectNext)="selectNext($event)"
-  ></app-selected-item>
+  ></app-selected-item> -->
 
 
   <div class="items" [ngClass]="{ 'multiple-item-list': mediaFiles.length > 1 }">

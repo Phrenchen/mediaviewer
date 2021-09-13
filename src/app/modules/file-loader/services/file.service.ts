@@ -20,14 +20,14 @@ export class FileService {
   }
 
   public updateFiles(files: any[]): void {
-    console.log('updating with files:', files);
+    // console.log('updating with files:', files);
     if(files.length > 0) {
       this.files = [];        // clear list?
       this.initFiles(files);
       this.files$$.next(this.files);
     }
     else {
-      console.log('clear files -> empty list');
+      // console.log('clear files -> empty list');
       this.files$$.next([]);
     }
   }
