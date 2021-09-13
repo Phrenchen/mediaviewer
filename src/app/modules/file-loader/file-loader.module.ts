@@ -8,6 +8,7 @@ import { GridConfiguratorComponent } from './components/grid-configurator/grid-c
 import { ImageEditorModule } from '../image-editor/image-editor.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ImageEditorModule,
     MatButtonModule,
     MatTooltipModule,
+    MatIconModule,
   ],
   exports: [
     DropZoneComponent,

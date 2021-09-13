@@ -13,7 +13,7 @@
 
 
   /* basics */
-  --dark-bg: #333;
+  --dark-bg: #333333;
   --light-bg: #ccc;
   --dark-txt: #333;
   --light-txt: #ccc;
@@ -28,17 +28,17 @@
 
   /* gradient-shadow */
 
-  --color: hsl(37, 100%, 84%);
+  /* --color: hsl(37, 100%, 84%); */
 
 
   /* --clr-orange: 7 100% 63%; */
   /* --clr-orange: 212, 100%, 86%; */
-  --clr-orange: 37, 100%, 84%;
+  /* --clr-orange: 37, 100%, 84%; */
   /* --clr-blue: 239 100% 50%; */
   /* --clr-blue: 212, 100%, 84%; */
-  --clr-blue: 96, 100%, 84%;
+  /* --clr-blue: 96, 100%, 84%; */
 
-  --spacer: 1vmin;
+  /* --spacer: 1vmin; */
   /* gradient-shadow end */
 
 

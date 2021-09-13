@@ -1,2 +1,3 @@
-<!-- <button (click)="onToggle()">{{ toggle ? enabledLabel : disabledLabel}}</button> -->
-<div (click)="onToggle()">{{ toggle ? enabledLabel : disabledLabel}}</div>
+<div class="toggle-container with-shadow" (click)="onToggle()">
+  <mat-icon class="icon" [ngClass]="{'expanded': toggle}">menu</mat-icon>
+</div>

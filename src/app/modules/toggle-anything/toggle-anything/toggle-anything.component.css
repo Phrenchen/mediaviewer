@@ -1,8 +1,35 @@
-div {
+.toggle-container {
   padding: 1rem;
   cursor: pointer;
 
-  border: 3px solid black;
-  border-radius: 1rem;
-  width: 10vw;
+  /* border: 3px solid black; */
+  border-radius: 50%;
+  width: min-content;
+  height: min-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--selected-bg-color);
+
+  transition: all .6s ease-out;
+}
+
+.toggle-container:hover {
+  background-color: var(--selected-txt-color);
+}
+
+.toggle-container:hover .icon {
+  color: black;
+}
+
+
+.icon {
+  transition: all .3s ease-out;
+  color: var(--selected-txt-color);
+}
+
+.expanded {
+  transform: rotate(90deg);
 }

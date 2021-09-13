@@ -1,5 +1,26 @@
 <div class="column-buttons">
   <!-- <p>Anzahl Spalten ändern</p> -->
-  <button mat-raised-button matTooltip="Weniger Spalten" [matTooltipPosition]="'below'" class="button" (click)="decreaseColCount($event)">-</button>
-  <button mat-raised-button matTooltip="Mehr Spalten" [matTooltipPosition]="'below'" class="button" (click)="increaseColCount($event)">+</button>
+
+  <!-- <button mat-raised-button matTooltip="Weniger Spalten" [matTooltipPosition]="'below'" class="button" (click)="decreaseColCount($event)">-</button>
+  <button mat-raised-button matTooltip="Mehr Spalten" [matTooltipPosition]="'below'" class="button" (click)="increaseColCount($event)">+</button> -->
+
+  <button
+    mat-icon-button
+    class="icon-btn"
+    (click)="decreaseColCount($event)"
+    matTooltip="Weniger Spalten"
+    [matTooltipPosition]="'below'"
+  >
+    <mat-icon>remove</mat-icon>
+  </button>
+
+  <button
+    mat-icon-button
+    class="icon-btn"
+    (click)="increaseColCount($event)"
+    matTooltip="Mehr Spalten"
+    [matTooltipPosition]="'below'"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
 </div>
