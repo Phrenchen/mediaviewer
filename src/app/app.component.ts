@@ -7,7 +7,7 @@ import { FileService } from './modules/file-loader/services/file.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public showUI: boolean = false;
+  public showUI: boolean = true;
   public showDropzone: boolean = true;
   public fileCount = 0;
 

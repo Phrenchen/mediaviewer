@@ -8,6 +8,9 @@ import { ToggleAnythingModule } from './modules/toggle-anything/toggle-anything.
 import { UserFileListModule } from './modules/user-file-list/user-file-list.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SettingsComponent } from './components/settings/settings.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +23,10 @@ import { SettingsComponent } from './components/settings/settings.component';
     UserFileListModule,
     ToggleAnythingModule,
     BrowserAnimationsModule,
+
+    MatTooltipModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

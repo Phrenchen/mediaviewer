@@ -5,8 +5,11 @@
   justify-content: space-between;
   align-items: center;
 
-
+  /* background-color: red; */
+  background-color: var(--semi-transparent-bg);
   width: 100%;
+
+  padding: 1rem;
 }
 
 .setting-container > * {

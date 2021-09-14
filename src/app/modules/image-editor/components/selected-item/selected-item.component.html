@@ -42,7 +42,7 @@
 
       <div (click)="onItemClicked()" class="media">
         <div *ngSwitchCase="'image'">
-          <img
+          <img class="actual-image"
             src="{{ getUrl(item) }}"
             alt="user image"
           />
@@ -69,7 +69,7 @@
           </audio>
         </div>
         <div *ngSwitchDefault>
-          <img src="{{ item.url }}" alt="item.url" />
+          <img class="actual-image" src="{{ item.url }}" alt="item.url" />
         </div>
 
       </div>

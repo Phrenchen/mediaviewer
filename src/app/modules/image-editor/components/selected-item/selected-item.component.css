@@ -79,6 +79,23 @@
   height: min-content;
 }
 
+.actual-image {
+  /* background-color: #fff;
+  height: 127px;
+  width: 764px;
+  margin: -6px 0 -1px 18px; */
+  /* position: relative; */
+}
+.actual-image::before {
+  /* content: " ";
+  background-image: url(/src/assets/images/giant_cats/gc-12.jpg);
+  position: absolute;
+  left: -100px;
+  top: -60px;
+  width: 100px;
+  height: 100px; */
+}
+
 .audio-container {
   background-color: var(--selected-bg-color);
 }
@@ -103,7 +120,7 @@
 
 
 .selected-item {
-  z-index: 999999999;
+  z-index: 2;
   max-width: 100vw;
   max-height: 100vh;
 

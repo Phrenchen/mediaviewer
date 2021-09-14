@@ -1,5 +1,4 @@
-@import url('variables.css');
-
+@import url("variables.css");
 
 * {
   box-sizing: border-box;
@@ -18,7 +17,7 @@ body {
   background-color: var(--selected-bg-color);
   color: var(--selected-txt-color);
 
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 * {
@@ -30,9 +29,14 @@ p {
   margin: 0;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 /* gradient-shadow */
 .card {
@@ -47,6 +51,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .with-shadow {
-  -webkit-box-shadow: 0px 0px 7px 4px rgba(0,0,0,0.41);
-  box-shadow: 0px 0px 7px 4px rgba(0,0,0,0.41);
+  -webkit-box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.41);
+}
+
+.hovering-icon {
+  transition: all .3s ease-out;
+  color: lightgrey;
+}
+
+.hovering-icon:hover .icon {
+  color: black;
+}
+
+.icon {
+  transition: all .6s ease-out;
+  color: var(--selected-txt-color);
+}
+
+.expanded {
+  transform: rotate(90deg);
 }

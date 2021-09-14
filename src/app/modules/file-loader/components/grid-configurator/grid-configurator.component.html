@@ -6,21 +6,21 @@
 
   <button
     mat-icon-button
-    class="icon-btn"
+    class="hovering-icon with-shadow"
     (click)="decreaseColCount($event)"
     matTooltip="Weniger Spalten"
     [matTooltipPosition]="'below'"
   >
-    <mat-icon>remove</mat-icon>
+    <mat-icon class="icon">remove</mat-icon>
   </button>
 
   <button
     mat-icon-button
-    class="icon-btn"
+    class="hovering-icon with-shadow"
     (click)="increaseColCount($event)"
     matTooltip="Mehr Spalten"
     [matTooltipPosition]="'below'"
   >
-    <mat-icon>add</mat-icon>
+    <mat-icon class="icon">add</mat-icon>
   </button>
 </div>

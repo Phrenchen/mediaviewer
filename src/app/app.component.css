@@ -25,7 +25,21 @@ header {
 }
 
 .app-settings {
-  margin: 1rem auto;
+  /* margin: 1rem auto; */
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  z-index: 2;
+  transform: translate(-50%, 0);
+
+  opacity: 0;
+  transition: opacity .3s ease-out;
+}
+
+.full-opacity {
+  opacity: 1;
 }
 
 .content {

@@ -1,9 +1,29 @@
 <div class="setting-container with-shadow">
   <app-grid-configurator></app-grid-configurator>
-  <button mat-raised-button *ngIf="fileCount > 0" (click)="resetFiles()">
-    Liste löschen
-  </button>
-  <label class="file-upload">
+
+  <!-- *ngIf="fileCount > 0" -->
+  <div>
+    <button
+      mat-icon-button
+      class="hovering-icon with-shadow"
+      matTooltip="Liste löschen"
+      [matTooltipPosition]="'below'"
+      (click)="resetFiles()"
+    >
+      <mat-icon class="icon">delete</mat-icon>
+    </button>
+
+    <!-- <button
+      mat-icon-button
+      class="hovering-icon with-shadow"
+      matTooltip="xxx"
+      [matTooltipPosition]="'below'"
+    >
+      <mat-icon class="icon">remove</mat-icon>
+    </button> -->
+  </div>
+
+  <label class="file-upload with-shadow">
     <input
       type="file"
       #fileDropRef

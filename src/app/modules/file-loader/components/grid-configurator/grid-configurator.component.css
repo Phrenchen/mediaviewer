@@ -20,8 +20,8 @@
 
   gap: 1rem;
 
-  color: var(--selected-txt-color);
-  background-color: var(--selected-bg-color);
+  /* color: var(--selected-txt-color); */
+  /* background-color: var(--selected-bg-color); */
 }
 
 p {

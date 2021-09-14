@@ -9,7 +9,7 @@
       (toggled)="showUI = $event"
     ></app-toggle-anything>
 
-    <app-settings *ngIf="showUI" class="app-settings"></app-settings>
+    <app-settings  [ngClass]="{'full-opacity': showUI}" class="app-settings"></app-settings>
 
 
   </header>
