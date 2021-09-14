@@ -7,6 +7,7 @@
 
   /* background-color: red; */
   background-color: var(--semi-transparent-bg);
+  border-radius: 0 0 .5rem .5rem;
   width: 100%;
 
   padding: 1rem;
