@@ -9,21 +9,21 @@ export class ToggleAnythingComponent implements OnInit {
 
   @Input() enabledLabel: string = '';
   @Input() disabledLabel: string = '';
-  @Input() initialState: boolean = false;
+  @Input() initialState: boolean | null = false;
 
   @Output() toggled: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  public toggle: boolean = true;
+  // public toggle: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.toggle = this.initialState;
+    this.initialState = this.initialState as boolean;
   }
 
   public onToggle(): void {
-    this.toggle = !this.toggle;
-    this.toggled.emit(this.toggle);
+    this.initialState = !this.initialState;
+    this.toggled.emit(this.initialState);
   }
 
 }

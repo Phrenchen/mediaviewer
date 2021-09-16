@@ -17,8 +17,15 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
+  top: 0;
+  left: 0;
 
+  pointer-events: none;
   transform: translate(-50%, -50%);
+}
+
+.is-hovering {
+  font-size: clamp(5px, 30rem, 80px);
 }
 
 :host ::ng-deep .mat-icon {

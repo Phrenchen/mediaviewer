@@ -1,15 +1,15 @@
 <div class="outer-container">
   <header>
+    <!-- *ngIf="fileCount > 0" -->
     <app-toggle-anything
       class="hover-over-everything"
-      *ngIf="fileCount > 0"
-      [initialState]="false"
+      [initialState]="uiService.showUi$ | async"
       [enabledLabel]="'Hide UI'"
       [disabledLabel]="'Show UI'"
-      (toggled)="showUI = $event"
+      (toggled)="updateUi($event)"
     ></app-toggle-anything>
 
-    <app-settings class="app-settings" [ngClass]="{'enabled-settings': showUI}"></app-settings>
+    <app-settings class="app-settings" [ngClass]="{'enabled-settings': uiService.showUi$ | async}"></app-settings>
 
 
   </header>

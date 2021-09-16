@@ -4,7 +4,7 @@
 
 .items {
   display: grid;
-  gap: .2vmin;
+  gap: .5rem;
   /* grid-template-columns: 1fr;
   justify-self: center;
 

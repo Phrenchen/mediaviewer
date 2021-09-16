@@ -27,20 +27,41 @@
     </button>
   </div>
 
-
-  <!-- <div>
-    <button
-      mat-icon-button
-      class="hovering-icon with-shadow"
-      matTooltip="Liste löschen"
+  <div>
+    <button mat-icon-button class="hovering-icon with-shadow large-left-margin"
+      matTooltip="Info"
       [matTooltipPosition]="'below'"
-      (click)="resetFiles()"
+      (click)="showButtons = !showButtons"
     >
-      <mat-icon class="icon">delete</mat-icon>
+      <mat-icon class="icon">info</mat-icon>
     </button>
   </div>
 
-   -->
+  <div class="example-button-container" *ngIf="showButtons">
+    <p>
+      Unterstützt jpg, png, gif.
+    </p>
+
+    <p>
+      Beispielbilder:
+    </p>
+    <div class="example-list">
+      <!-- ZELDA examples -->
+      <div class="btn-example" (click)="showExamples(0)">
+        <img src="/assets/images/curious_zelda/curious_zelda_1.jpg">
+      </div>
+
+      <!-- big cat examples -->
+      <div class="btn-example" (click)="showExamples(4)">
+        <img src="/assets/images/giant_cats/gc-1.jpg">
+      </div>
+    </div>
+
+
+    <!-- <button *ngIf="!hasFiles" (click)="showExamples(1)">Beispiel GIF</button>
+    <button *ngIf="!hasFiles" (click)="showExamples(2)">Beispiel SVG</button>
+    <button *ngIf="!hasFiles" (click)="showExamples(3)">Beispiel MP3</button> -->
+  </div>
 
   <!-- <app-theme-switch></app-theme-switch> -->
 </div>

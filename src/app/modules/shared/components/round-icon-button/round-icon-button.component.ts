@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { fromEvent, Observable } from 'rxjs';
-import { TweenMax, TimelineMax } from 'gsap';
 import { throttleTime } from 'rxjs/operators';
 
 @Component({
@@ -9,6 +8,8 @@ import { throttleTime } from 'rxjs/operators';
   styleUrls: ['./round-icon-button.component.css'],
 })
 export class RoundIconButtonComponent implements OnInit, AfterViewInit {
+  public isHovering = false;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -25,20 +26,49 @@ export class RoundIconButtonComponent implements OnInit, AfterViewInit {
       return;
     }
 
+    const hoverStartObserver: Observable<MouseEvent> = fromEvent(
+      hoverableArea,
+      'mouseover'
+    ) as Observable<MouseEvent>;
+    const hoverEndObserver: Observable<MouseEvent> = fromEvent(
+      hoverableArea,
+      'mouseout'
+    ) as Observable<MouseEvent>;
+    hoverStartObserver.pipe(throttleTime(30)).subscribe((event) => {
+      this.isHovering = true;
+    });
+    hoverEndObserver.pipe(throttleTime(30)).subscribe((event) => {
+      this.isHovering = false;
+    });
+
+    // hoverableArea
     const mouseMoveObserver: Observable<MouseEvent> = fromEvent(
       hoverableArea,
       'mousemove'
     ) as Observable<MouseEvent>;
-
     mouseMoveObserver.pipe(throttleTime(30)).subscribe((event) => {
       let mouseX = event.clientX - hoverableArea.getBoundingClientRect().left;
-      let mouseY = event.clientY;
+      let mouseY = event.clientY - hoverableArea.getBoundingClientRect().top;
 
-      // mouseX -= homingItem.getBoundingClientRect().width * 0.25;
-      // mouseY -= homingItem.getBoundingClientRect().height * 0.5;
+      this.moveItem(homingItem, { top: mouseY, left: mouseX });
 
-      homingItem.style.left = mouseX + 'px';
-      homingItem.style.top = mouseY + 'px';
+      //   homingItem.style.left = mouseX + 'px';
+      //   homingItem.style.top = mouseY + 'px';
     });
+
+    this.moveItem(homingItem, { top: '50%', left: '50%' });
+  }
+
+  private moveItem(
+    item: HTMLElement,
+    position: { top: number | string; left: number | string }
+  ): void {
+    if (typeof position.top === 'string') {
+      item.style.left = position.left as string;
+      item.style.top = position.top as string;
+    } else {
+      item.style.left = position.left + 'px';
+      item.style.top = position.top + 'px';
+    }
   }
 }

@@ -1,3 +1,8 @@
-<button mat-icon-button id="hoverable-area" class="hovering-icon with-shadow" #hoverablearea>
-  <mat-icon id="homing-item" class="icon" #homingitem>image_search</mat-icon>
+<button
+  mat-icon-button
+  id="hoverable-area"
+  class="hovering-icon with-shadow-light"
+  #hoverablearea
+>
+    <mat-icon id="homing-item" class="icon" [ngClass]="{ 'is-hovering': isHovering }" #homingitem>image_search</mat-icon>
 </button>
