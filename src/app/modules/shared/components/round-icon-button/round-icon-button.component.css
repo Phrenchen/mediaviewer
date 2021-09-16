@@ -1,0 +1,26 @@
+button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* border: 3px dashed black; */
+}
+
+:host ::ng-deep .mat-icon {
+  /* font-size: clamp(5rem, 50vmin, 100%); */
+  /* font-size: 5rem; */
+
+  /* width: min-content;
+  height: min-content; */
+
+}
+
+/* button > * {
+  transform: translate(-50%, -50%);
+} */

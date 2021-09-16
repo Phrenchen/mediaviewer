@@ -36,10 +36,13 @@ header {
 
   opacity: 0;
   transition: opacity .3s ease-out;
+
+  pointer-events: none;
 }
 
-.full-opacity {
+.enabled-settings {
   opacity: 1;
+  pointer-events: all;
 }
 
 .content {

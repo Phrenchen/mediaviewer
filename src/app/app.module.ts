@@ -11,6 +11,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { SharedModule } from './modules/shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     ThemeSwitchModule,
     FileLoaderModule,
     UserFileListModule,

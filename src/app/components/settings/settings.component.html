@@ -1,8 +1,34 @@
 <div class="setting-container with-shadow">
   <app-grid-configurator></app-grid-configurator>
 
-  <!-- *ngIf="fileCount > 0" -->
   <div>
+    <input type="file" id="selectedFile" style="display: none" (change)="fileBrowserHandler($event)" multiple/>
+    <div>
+
+
+
+      <button mat-icon-button class="hovering-icon with-shadow"
+        matTooltip="Bilder hinzufügen"
+        [matTooltipPosition]="'below'"
+        onclick="document.getElementById('selectedFile').click();"
+      >
+        <mat-icon class="icon">image_search</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div>
+    <button mat-icon-button class="hovering-icon with-shadow"
+      matTooltip="Liste löschen"
+      [matTooltipPosition]="'below'"
+      (click)="resetFiles()"
+    >
+      <mat-icon class="icon">delete</mat-icon>
+    </button>
+  </div>
+
+
+  <!-- <div>
     <button
       mat-icon-button
       class="hovering-icon with-shadow"
@@ -12,25 +38,9 @@
     >
       <mat-icon class="icon">delete</mat-icon>
     </button>
-
-    <!-- <button
-      mat-icon-button
-      class="hovering-icon with-shadow"
-      matTooltip="xxx"
-      [matTooltipPosition]="'below'"
-    >
-      <mat-icon class="icon">remove</mat-icon>
-    </button> -->
   </div>
 
-  <!-- <label class="file-upload with-shadow">
-    <input
-      type="file"
-      #fileDropRef
-      id="fileDropRef"
-      multiple
-      (change)="fileBrowserHandler($event)"
-    />
-  </label> -->
+   -->
+
   <!-- <app-theme-switch></app-theme-switch> -->
 </div>

@@ -21,3 +21,11 @@
 
   flex-grow: 1;
 }
+
+.file-upload input{
+  border: 3px dashed deeppink;
+  /* display:none; */
+
+  opacity: .3;
+
+}
