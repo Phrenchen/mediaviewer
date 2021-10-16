@@ -19,6 +19,23 @@ body {
   /* color: var(--selected-txt-color); */
 
   transition: all 0.3s ease-out;
+
+}
+
+::-webkit-scrollbar
+{
+  width: 0;
+  height: 1.2rem;
+}
+
+::-webkit-scrollbar-track
+{
+  background: white;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: hsl(0, 0%, 60%);
 }
 
 * {

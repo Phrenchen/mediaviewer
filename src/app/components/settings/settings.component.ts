@@ -14,7 +14,7 @@ export class SettingsComponent implements OnInit {
   public showButtons = false;
 
   constructor(public readonly fileService: FileService,
-    private readonly staticData: StaticDataService) { }
+    private readonly staticData: StaticDataService) {}
 
   ngOnInit(): void {
     this.fileService.files$.subscribe(files => {

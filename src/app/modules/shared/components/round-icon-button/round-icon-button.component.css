@@ -11,6 +11,9 @@ button {
   align-items: center;
 
   /* border: 3px dashed black; */
+
+  /* outline: 3px solid red;
+  outline-offset: 3rem; */
 }
 
 #homing-item {
@@ -26,6 +29,8 @@ button {
 
 .is-hovering {
   font-size: clamp(5px, 30rem, 80px);
+
+
 }
 
 :host ::ng-deep .mat-icon {

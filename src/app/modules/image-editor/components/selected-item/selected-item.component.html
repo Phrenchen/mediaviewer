@@ -41,7 +41,7 @@
     </div> -->
 
       <div (click)="onItemClicked()" class="media">
-        <div *ngSwitchCase="'image'">
+        <div *ngSwitchCase="'image'" class="actual-image-container">
           <img class="actual-image"
             src="{{ getUrl(item) }}"
             alt="user image"

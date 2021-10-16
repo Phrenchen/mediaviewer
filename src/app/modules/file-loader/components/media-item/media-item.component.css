@@ -98,9 +98,9 @@ video {
   max-height: 100%;
 }
 
-.selected-item img {
-  max-width: 100vw;
-  max-height: 100vh;
+ img {
+  max-width: min(100%, 100vw);
+  max-height: min(100%, 100vh);
 }
 
 /* MEDIA QUERY */

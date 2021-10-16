@@ -1,5 +1,5 @@
 <div class="setting-container with-shadow">
-  <app-grid-configurator></app-grid-configurator>
+
 
   <div>
     <input type="file" id="selectedFile" style="display: none" (change)="fileBrowserHandler($event)" multiple/>
@@ -27,6 +27,8 @@
     </button>
   </div>
 
+  <app-grid-configurator class="large-left-margin"></app-grid-configurator>
+
   <div>
     <button mat-icon-button class="hovering-icon with-shadow large-left-margin"
       matTooltip="Info"
@@ -48,12 +50,12 @@
     <div class="example-list">
       <!-- ZELDA examples -->
       <div class="btn-example" (click)="showExamples(0)">
-        <img src="/assets/images/curious_zelda/curious_zelda_1.jpg">
+        <img src="/assets/images/curious_zelda/curious_zelda_1.jpg" alt="ZELDA examples">
       </div>
 
       <!-- big cat examples -->
       <div class="btn-example" (click)="showExamples(4)">
-        <img src="/assets/images/giant_cats/gc-1.jpg">
+        <img src="/assets/images/giant_cats/gc-1.jpg" alt="Giant Cats examples">
       </div>
     </div>
 
