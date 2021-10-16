@@ -31,7 +31,7 @@ export class MediaItemComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log('media type:', this.item?.type);
+    // console.log('media type:', this.item?.type);
   }
 
 

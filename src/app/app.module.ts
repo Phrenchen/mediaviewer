@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SharedModule } from './modules/shared/shared.module';
+import {MultiStateMenuModule} from './modules/multi-state-menu/multi-state-menu.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +20,16 @@ import { SharedModule } from './modules/shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+
     SharedModule,
     ThemeSwitchModule,
     FileLoaderModule,
     UserFileListModule,
     ToggleAnythingModule,
-    BrowserAnimationsModule,
+    MultiStateMenuModule,
+
+
 
     MatTooltipModule,
     MatButtonModule,

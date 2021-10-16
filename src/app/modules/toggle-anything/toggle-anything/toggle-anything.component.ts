@@ -7,9 +7,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ToggleAnythingComponent implements OnInit {
 
+  @Input() iconName = 'menu';
+  @Input() showLabel = true;
   @Input() enabledLabel: string = '';
   @Input() disabledLabel: string = '';
-  @Input() initialState: boolean | null = false;
+  @Input() selected: boolean | null = false;
 
   @Output() toggled: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -18,12 +20,12 @@ export class ToggleAnythingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.initialState = this.initialState as boolean;
+    this.selected = this.selected as boolean;
   }
 
   public onToggle(): void {
-    this.initialState = !this.initialState;
-    this.toggled.emit(this.initialState);
+    this.selected = !this.selected;
+    this.toggled.emit(this.selected);
   }
 
 }

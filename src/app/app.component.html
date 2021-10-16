@@ -1,19 +1,61 @@
 <div class="outer-container">
   <header>
     <!-- *ngIf="fileCount > 0" -->
-    <app-toggle-anything
-      class="hover-over-everything"
-      [initialState]="uiService.showUi$ | async"
-      [enabledLabel]="'Hide UI'"
-      [disabledLabel]="'Show UI'"
-      (toggled)="updateUi($event)"
-    ></app-toggle-anything>
+    <div class="toggles">
+
+<!--      <div>-->
+<!--        <app-toggle-anything-->
+<!--          class="hover-over-everything"-->
+<!--          [iconName]="'fingerprint'"-->
+<!--          [selected]="appService.mainMenuConfig.currentStateName === 'NO_MEDIA'"-->
+<!--          [showLabel]="false"-->
+<!--          [enabledLabel]="'Showing State NO_MEDIA'"-->
+<!--          [disabledLabel]="'Show State NO_MEDIA'"-->
+<!--          (toggled)="updateMenuState('NO_MEDIA')"-->
+<!--        ></app-toggle-anything>-->
+
+
+<!--        <app-toggle-anything-->
+<!--          class="hover-over-everything"-->
+<!--          [iconName]="'favorite_border'"-->
+<!--          [selected]="appService.mainMenuConfig.currentStateName === 'MEDIA_LIST'"-->
+<!--          [showLabel]="false"-->
+<!--          [enabledLabel]="'Showing State MEDIA_LIST'"-->
+<!--          [disabledLabel]="'Show State MEDIA_LST'"-->
+<!--          (toggled)="updateMenuState('MEDIA_LIST')"-->
+<!--        ></app-toggle-anything>-->
+
+
+<!--        <app-toggle-anything-->
+<!--          class="hover-over-everything"-->
+<!--          [iconName]="'favorite'"-->
+<!--          [selected]="appService.mainMenuConfig.currentStateName === 'MEDIA_DETAIL'"-->
+<!--          [showLabel]="false"-->
+<!--          [enabledLabel]="'Showing State MEDIA_DETAIL'"-->
+<!--          [disabledLabel]="'Show State MEDIA_DETAIL'"-->
+<!--          (toggled)="updateMenuState('MEDIA_DETAIL')"-->
+<!--        ></app-toggle-anything>-->
+<!--      </div>-->
+
+<!--      <span style="color: white">{{appService.mainMenuConfig?.currentStateName}}</span>-->
+
+      <app-toggle-anything
+        class="hover-over-everything"
+        [selected]="uiService.showUi$ | async"
+        [showLabel]="false"
+        [enabledLabel]="'Hide UI'"
+        [disabledLabel]="'Show UI'"
+        (toggled)="updateUi($event)"
+      ></app-toggle-anything>
+
+    </div>
 
     <app-settings class="app-settings" [ngClass]="{'enabled-settings': uiService.showUi$ | async}"></app-settings>
 
 
   </header>
   <div class="content">
+
     <app-drop-zone *ngIf="showDropzone"></app-drop-zone>
     <div class="files">
       <!-- todo: add toggle: icon button? -->

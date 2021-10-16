@@ -47,7 +47,7 @@ export class MediaService {
     // video, all other images
     result = type.split('/')[0];
 
-    console.log('type:', result);
+    // console.log('type:', result);
 
     return result;
 

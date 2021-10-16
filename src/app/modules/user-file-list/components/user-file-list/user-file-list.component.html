@@ -5,7 +5,7 @@
   <!-- <div *ngFor="let mp of mediaPaths; let i = index" [ngStyle]="{'color': mp.isSelected ? 'green !important' : 'grey'}"> -->
   <div *ngFor="let mp of mediaPaths; let i = index" class="media-path" [ngClass]="{'selected-file': mp.isSelected}">
     <app-toggle-anything
-    [initialState]="false"
+            [selected]="false"
       [enabledLabel]="'selected: ' +  (i + 1) + '.' + mp.path + ':' + mp.fileName"
       [disabledLabel]="'click to select: ' +  (i + 1) + '.' + mp.path + ':' + mp.fileName"
       (toggled)="mp.isSelected = $event"

@@ -7,7 +7,6 @@ import {
 import { DomSanitizer } from '@angular/platform-browser';
 import { MediaFile } from '../../interfaces/MediaFile';
 import { FileService } from '../../services/file.service';
-import { MediaService } from '../../services/media.service';
 
 @Component({
   selector: 'app-file-list',
@@ -28,13 +27,14 @@ export class FileListComponent implements OnInit, AfterViewInit {
 
   constructor(
     private readonly fileService: FileService,
+
     private sanitizer: DomSanitizer
   ) {}
 
 
   ngOnInit(): void {
     this.fileService.files$.subscribe(files => {
-      console.log('received new files:', files.length);
+      // console.log('received new files:', files.length);
       this.mediaFiles = files;
       // this.mediaFiles = [];
       // this.initFiles(this.files);

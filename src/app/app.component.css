@@ -1,9 +1,17 @@
 .hover-over-everything {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(-50%, 25%);
-  z-index: 999999999999;
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*right: 0;*/
+  /*transform: translate(-50%, 25%);*/
+  /*z-index: 999999999999;*/
+}
+
+.toggles {
+  /*border: 3px solid deeppink;*/
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .outer-container {
@@ -31,13 +39,14 @@ header {
   top: 0;
   left: 50%;
 
+  width: min-content;
+
   z-index: 2;
   transform: translate(-50%, 0);
 
   opacity: 0;
-  transition: opacity .3s ease-out;
-
   pointer-events: none;
+  transition: opacity .3s ease-out;
 }
 
 .enabled-settings {

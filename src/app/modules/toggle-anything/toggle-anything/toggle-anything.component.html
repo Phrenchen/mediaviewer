@@ -1,4 +1,7 @@
 <button mat-icon-button class="hovering-icon with-shadow" (click)="onToggle()">
-  <mat-icon class="icon" [ngClass]="{'expanded': initialState}">menu</mat-icon>
+  <div>
+    <mat-icon class="icon" [ngClass]="{'expanded': selected}">{{iconName}}</mat-icon>
+    <span class="toggle-label" *ngIf="showLabel">{{selected ? enabledLabel : disabledLabel}}</span>
+  </div>
 </button>
 

@@ -4,10 +4,7 @@
   <div>
     <input type="file" id="selectedFile" style="display: none" (change)="fileBrowserHandler($event)" multiple/>
     <div>
-
-
-
-      <button mat-icon-button class="hovering-icon with-shadow"
+      <button [ngClass]="{'show-button': itemVisible('btn-import-files')}" mat-icon-button class="setting hovering-icon with-shadow"
         matTooltip="Bilder hinzufügen"
         [matTooltipPosition]="'below'"
         onclick="document.getElementById('selectedFile').click();"
@@ -18,7 +15,7 @@
   </div>
 
   <div>
-    <button mat-icon-button class="hovering-icon with-shadow"
+    <button [ngClass]="{'show-button': itemVisible('btn-clear-list')}" mat-icon-button class="setting hovering-icon with-shadow"
       matTooltip="Liste löschen"
       [matTooltipPosition]="'below'"
       (click)="resetFiles()"
@@ -27,10 +24,28 @@
     </button>
   </div>
 
-  <app-grid-configurator class="large-left-margin"></app-grid-configurator>
+  <app-grid-configurator [ngClass]="{'show-button': itemVisible('btn-configure-grid')}" class="setting large-left-margin"></app-grid-configurator>
 
   <div>
-    <button mat-icon-button class="hovering-icon with-shadow large-left-margin"
+    <button [ngClass]="{'show-button': itemVisible('btn-edit')}" mat-icon-button class="setting hovering-icon with-shadow"
+            matTooltip="Editieren"
+            [matTooltipPosition]="'below'"
+            (click)="startEditing()"
+    >
+      <mat-icon class="icon">edit</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button [ngClass]="{'show-button': itemVisible('btn-presentation')}" mat-icon-button class="setting hovering-icon with-shadow"
+            matTooltip="Abspielen"
+            [matTooltipPosition]="'below'"
+            (click)="startPresentation()"
+    >
+      <mat-icon class="icon">play_circle</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button [ngClass]="{'show-button': itemVisible('btn-show-info')}" mat-icon-button class="setting hovering-icon with-shadow large-left-margin"
       matTooltip="Info"
       [matTooltipPosition]="'below'"
       (click)="showButtons = !showButtons"
